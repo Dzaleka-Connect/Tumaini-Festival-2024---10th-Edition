@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumaini Festival 2024 - 10th Edition</title>
+    <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #87CEEB;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .border-pattern {
+            height: 20px;
+            background: repeating-linear-gradient(45deg, #FF6347, #FF6347 10px, #FFA500 10px, #FFA500 20px);
+        }
+        .logo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo-item {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .logo-item[alt]::before {
+            content: attr(alt);
+            position: absolute;
+            color: transparent;
+        }
+        .main-title {
+            font-size: 4em;
+            margin: 20px 0;
+            color: #FF6347;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+        }
+        .festival-info {
+            text-align: center;
+            padding: 20px;
+        }
+        .date-location {
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #FF6347;
+        }
+        .cta-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            background-color: #FF6347;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            font-size: 1.2em;
+        }
+        .cta-button:hover {
+            background-color: #FF4500;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+        .year {
+            font-size: 2.5em;
+            color: #FFA500;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .countdown {
+            font-size: 2em;
+            font-weight: bold;
+            color: #FF6347;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .countdown div {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .countdown span {
+            display: block;
+            font-size: 1.5em;
+        }
+        .countdown-label {
+            font-size: 0.8em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="border-pattern"></div>
+            <div class="logo">
+                <div class="logo-item" alt="10 Years">10 YEARS</div>
+                <div class="logo-item" alt="Tumaini Festival">TUMAINI FESTIVAL</div>
+            </div>
+            <h1 class="main-title">Tumaini Festival</h1>
+        </header>
+        <img src="https://pbs.twimg.com/media/GO0BAc0WIAARjam?format=jpg&name=large" alt="Tumaini Festival Performer" class="main-image">
+        <div class="festival-info">
+            <div class="year">2024</div>
+            <div class="date-location">
+                <p><strong>31 OCT - 02 NOV 2024</strong></p>
+                <p>DZALEKA REFUGEE CAMP</p>
+                <p>DOWA, MALAWI</p>
+            </div>
+            <div class="countdown" id="countdown">
+                <div>
+                    <span id="days">0</span>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div>
+                    <span id="hours">0</span>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div>
+                    <span id="minutes">0</span>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div>
+                    <span id="seconds">0</span>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            <a href="#register" class="cta-button">Register Now</a>
+        </div>
+        <footer class="footer">
+            <p>© 2024 Tumaini Festival. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const festivalDate = new Date('2024-10-31T00:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = festivalDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        // Smooth scroll for "Register Now" button
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#register').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
