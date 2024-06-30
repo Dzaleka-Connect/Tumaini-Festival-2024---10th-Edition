@@ -38,6 +38,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
+            flex-direction: row; /* Ensure items stay in row on mobile */
         }
         .logo-item {
             width: 100px;
@@ -127,7 +128,7 @@
             font-size: 0.8em;
             color: #333;
         }
-        }
+
         /* Media Queries for Responsive Design */
         @media (max-width: 768px) {
             .container {
@@ -135,8 +136,9 @@
                 margin: 10px;
             }
             .logo {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row; /* Ensure items stay in row on mobile */
+                justify-content: space-between; /* Maintain spacing between items */
+                align-items: center; /* Center items vertically */
             }
             .logo-item {
                 width: 80px;
@@ -226,7 +228,7 @@
             <a href="https://tumainiletu.org/our_work/tumaini-festival/" class="cta-button">Learn More</a>
         </div>
         <footer class="footer">
-            <p>© 2024 Tumaini Festival. All rights reserved.</p>
+            <p>© 2024 Dzaleka.com x Tumaini Festival. All rights reserved.</p>
         </footer>
     </div>
 
@@ -248,14 +250,6 @@
         }
 
         setInterval(updateCountdown, 1000);
-
-        // Smooth scroll for "Learn More" button
-        document.querySelector('.cta-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('https://tumainiletu.org/our_work/tumaini-festival/').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
     </script>
 </body>
 </html>
