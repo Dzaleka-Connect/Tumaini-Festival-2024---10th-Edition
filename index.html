@@ -127,6 +127,64 @@
             font-size: 0.8em;
             color: #333;
         }
+        }
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                margin: 10px;
+            }
+            .logo {
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo-item {
+                width: 80px;
+                height: 80px;
+            }
+            .main-title {
+                font-size: 2.5em;
+                margin: 10px 0;
+            }
+            .cta-button {
+                width: 80%;
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+            .year {
+                font-size: 2em;
+            }
+            .countdown {
+                flex-direction: column;
+                gap: 5px;
+                font-size: 1.5em;
+            }
+            .countdown div {
+                padding: 5px;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo-item {
+                width: 60px;
+                height: 60px;
+            }
+            .main-title {
+                font-size: 2em;
+            }
+            .cta-button {
+                width: 100%;
+                font-size: 0.9em;
+            }
+            .year {
+                font-size: 1.5em;
+            }
+            .countdown {
+                font-size: 1.2em;
+            }
+            .countdown div {
+                padding: 5px;
+            }
+        }
     </style>
 </head>
 <body>
