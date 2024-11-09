@@ -3,253 +3,564 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tumaini Festival 2024 - 10th Edition</title>
-    <link rel="icon" href="https://www.dzaleka.com/favicon.ico" type="image/x-icon">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #f5f5f5;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .header {
-            background-color: #87CEEB;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-        .border-pattern {
-            height: 20px;
-            background: repeating-linear-gradient(45deg, #FF6347, #FF6347 10px, #FFA500 10px, #FFA500 20px);
-        }
-        .logo {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            flex-direction: row; /* Ensure items stay in row on mobile */
-        }
-        .logo-item {
-            width: 100px;
-            height: 100px;
-            background-color: #333;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        .logo-item[alt]::before {
-            content: attr(alt);
-            position: absolute;
-            color: transparent;
-        }
-        .main-title {
-            font-size: 4em;
-            margin: 20px 0;
-            color: #FF6347;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .main-image {
-            width: 100%;
-            height: auto;
-        }
-        .festival-info {
-            text-align: center;
-            padding: 20px;
-        }
-        .date-location {
-            font-size: 1.2em;
-            margin-top: 20px;
-            color: #FF6347;
-        }
-        .cta-button {
-            display: inline-block;
-            margin: 20px auto;
-            padding: 15px 30px;
-            background-color: #FF6347;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            text-transform: uppercase;
-            transition: background-color 0.3s;
-            font-size: 1.2em;
-        }
-        .cta-button:hover {
-            background-color: #FF4500;
-        }
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 0.9em;
-        }
-        .year {
-            font-size: 2.5em;
-            color: #FFA500;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-        .countdown {
-            font-size: 2em;
-            font-weight: bold;
-            color: #FF6347;
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .countdown div {
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .countdown span {
-            display: block;
-            font-size: 1.5em;
-        }
-        .countdown-label {
-            font-size: 0.8em;
-            color: #333;
-        }
-
-        /* Media Queries for Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                width: 100%;
-                margin: 10px;
-            }
-            .logo {
-                flex-direction: row; /* Ensure items stay in row on mobile */
-                justify-content: space-between; /* Maintain spacing between items */
-                align-items: center; /* Center items vertically */
-            }
-            .logo-item {
-                width: 80px;
-                height: 80px;
-            }
-            .main-title {
-                font-size: 2.5em;
-                margin: 10px 0;
-            }
-            .cta-button {
-                width: 80%;
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-            .year {
-                font-size: 2em;
-            }
-            .countdown {
-                flex-direction: column;
-                gap: 5px;
-                font-size: 1.5em;
-            }
-            .countdown div {
-                padding: 5px;
-            }
-        }
-        @media (max-width: 480px) {
-            .logo-item {
-                width: 60px;
-                height: 60px;
-            }
-            .main-title {
-                font-size: 2em;
-            }
-            .cta-button {
-                width: 100%;
-                font-size: 0.9em;
-            }
-            .year {
-                font-size: 1.5em;
-            }
-            .countdown {
-                font-size: 1.2em;
-            }
-            .countdown div {
-                padding: 5px;
-            }
-        }
-    </style>
+    <meta name="description" content="A demo website showcasing modern web development practices">
+    <title>Demo Festival Website</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="border-pattern"></div>
-            <div class="logo">
-                <div class="logo-item" alt="10 Years">10 YEARS</div>
-                <div class="logo-item" alt="Tumaini Festival">TUMAINI FESTIVAL</div>
+    <!-- Header -->
+    <header class="navbar">
+        <nav class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="assets/images/logo.svg" alt="Tumaini Festival Logo" width="150" height="40">
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">Home</a></li>
+                <li><a href="https://tumainiletu.org/gallery/" class="nav-link">Gallery</a></li>
+                <li><a href="/pages/media-coverage.html" class="nav-link">Media</a></li>
+                <li><a href="#program" class="nav-link">Program</a></li>
+                <li><a href="https://tumainiletu.org/contact-us/" class="nav-link btn btn-primary">Get Involved</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Important Disclaimer Banner -->
+        <div class="disclaimer-banner" id="disclaimer">
+            <div class="container">
+                <p class="disclaimer-text">
+                    <strong>IMPORTANT DISCLAIMER:</strong> This is a demo website created for educational purposes only. 
+                    This site is not affiliated with, endorsed by, or connected to any actual festival. 
+                    This is a practice project for web development.
+                </p>
+                <button class="disclaimer-close" aria-label="Close disclaimer">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            <h1 class="main-title">Tumaini Festival</h1>
-        </header>
-        <img src="https://pbs.twimg.com/media/GO0BAc0WIAARjam?format=jpg&name=large" alt="Tumaini Festival Performer" class="main-image">
-        <div class="festival-info">
-            <div class="year">2024</div>
-            <div class="date-location">
-                <p><strong>31 OCT - 02 NOV 2024</strong></p>
-                <p>DZALEKA REFUGEE CAMP</p>
-                <p>DOWA, MALAWI</p>
-            </div>
-            <div class="countdown" id="countdown">
-                <div>
-                    <span id="days">0</span>
-                    <div class="countdown-label">Days</div>
-                </div>
-                <div>
-                    <span id="hours">0</span>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div>
-                    <span id="minutes">0</span>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div>
-                    <span id="seconds">0</span>
-                    <div class="countdown-label">Seconds</div>
-                </div>
-            </div>
-            <a href="https://tumainiletu.org/our_work/tumaini-festival/" class="cta-button">Learn More</a>
         </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background">
+                <img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2024/11/04/353422.jpg" 
+                     alt="Tumaini Festival background" 
+                     class="hero-bg-image">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text fade-up">
+                    <div class="festival-dates">
+                        <span class="date-pill">
+                            <i class="far fa-calendar-alt"></i>
+                            October 31 - November 2, 2024
+                        </span>
+                        <span class="location-pill">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Dzaleka Refugee Camp, Dowa, Malawi
+                        </span>
+                    </div>
+                    <h1 class="mega-title">Tumaini Festival</h1>
+                    <p class="hero-subtitle">Malawi's Premier Refugee-Led Arts & Cultural Festival</p>
+                    <div class="hero-buttons">
+                        <a href="https://tumainiletu.org/contact-us/" class="btn btn-primary btn-lg">
+                            <i class="fas fa-hands-helping"></i>
+                            Support the Festival
+                        </a>
+                        <a href="/pages/about.html" class="btn btn-outline btn-lg">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="festival-note">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>Free admission - Everyone is welcome!</span>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Attendees</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll to explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section" style="padding-top: var(--space-3xl);">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content fade-up">
+                        <span class="section-tag">About The Festival</span>
+                        <h2 class="section-title">Transforming Lives Through Arts & Culture</h2>
+                        <p class="section-lead">Founded in 2014 by Menes La Plume, Tumaini Festival has grown to become Malawi's largest multicultural event. The festival brings together refugees and locals through artistic expression.</p>
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-theater-masks"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>Cultural Exchange</h3>
+                                    <p>The festival brings together artists from over 20 countries</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-fist-raised"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>Community Impact</h3>
+                                    <p>Creating opportunities for 750+ refugees annually</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image fade-up">
+                        <img src="https://mbc.mw/storage/2024/06/Tumaini-2019-Badre-Bahaji-LR-42-scaled-960x640.jpg?v=1717262482" 
+                             alt="Festival performance" 
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Replace the existing Program Section with this updated version -->
+        <section id="program" class="program-section" style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="program-header text-center">
+                    <span class="section-tag">2024 Program</span>
+                    <h2 class="section-title">Festival Schedule</h2>
+                    <p class="section-lead">31st OCT - 02nd NOV 2024 @Dzaleka Refugee Camp, Dowa, Malawi</p>
+                </div>
+
+                <div class="program-days">
+                    <!-- Day 1 - Friday -->
+                    <div class="program-day fade-up">
+                        <h3 class="day-title">Day 1 - Friday</h3>
+                        <div class="program-grid">
+                            <!-- Electric Stage -->
+                            <div class="stage-section">
+                                <h4 class="stage-title">Electric Stage</h4>
+                                <div class="performance-list">
+                                    <div class="performance-item">
+                                        <span class="time">13:30 - 13:45</span>
+                                        <div class="performance-details">
+                                            <h5>Official Opening Ceremony</h5>
+                                            <p>Camp Administrator & AMANI</p>
+                                        </div>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">13:50 - 14:15</span>
+                                        <span class="artist">MAMAN ALINE</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">15:00 - 15:20</span>
+                                        <span class="artist">DASTAIN KAPITAPITA</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">15:20 - 15:35</span>
+                                        <span class="artist">DJ LEONARD</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kinara Stage -->
+                            <div class="stage-section">
+                                <h4 class="stage-title">Kinara Stage</h4>
+                                <div class="performance-list">
+                                    <div class="performance-item">
+                                        <span class="time">14:30 - 15:00</span>
+                                        <span class="artist">NTHAMBI BAND</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">15:20 - 15:40</span>
+                                        <span class="artist">ROSIE KAPEND</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">17:45 - 18:05</span>
+                                        <span class="artist">KINJAZ DANCE CREW</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cultural Ground -->
+                            <div class="stage-section">
+                                <h4 class="stage-title">Cultural Ground</h4>
+                                <div class="performance-list">
+                                    <div class="performance-item">
+                                        <span class="time">13:15 - 13:30</span>
+                                        <span class="artist">ASAFA</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">15:20 - 15:30</span>
+                                        <span class="artist">FASHION IN THE DUST</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">16:40 - 17:10</span>
+                                        <span class="artist">GULE WAMKULU</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 - Saturday -->
+                    <div class="program-day fade-up">
+                        <h3 class="day-title">Day 2 - Saturday</h3>
+                        <div class="program-grid">
+                            <!-- Electric Stage -->
+                            <div class="stage-section">
+                                <h4 class="stage-title">Electric Stage</h4>
+                                <div class="performance-list">
+                                    <div class="performance-item">
+                                        <span class="time">11:00</span>
+                                        <span class="artist">DJ LEONARD</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">11:45-12:30</span>
+                                        <span class="artist">VAN VICKER</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">12:45-13:30</span>
+                                        <span class="artist">WALIKHO MAKHALA</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">13:45-14:30</span>
+                                        <span class="artist">DESTINATION BAND</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gaming Zone -->
+                            <div class="stage-section">
+                                <h4 class="stage-title">Gaming Zone</h4>
+                                <div class="performance-list">
+                                    <div class="performance-item">
+                                        <span class="time">10:00</span>
+                                        <span class="artist">SRH WORKSHOP</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">11:00</span>
+                                        <span class="artist">MUSIC BUSINESS WORKSHOP - MAVERICK MAYO</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">13:00 - 19:00</span>
+                                        <span class="artist">FREE ESPORTS COMPETITIONS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Poetry Corner -->
+                            <div class="stage-section">
+                                <h4 class="stage-title">Poetry Corner</h4>
+                                <div class="performance-list">
+                                    <div class="performance-item">
+                                        <span class="time">11:00</span>
+                                        <span class="artist">MC OPENS</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">11:10</span>
+                                        <span class="artist">KEREN</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">11:20</span>
+                                        <span class="artist">MANAL</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">11:30</span>
+                                        <span class="artist">NJ JULIUS</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">11:40</span>
+                                        <span class="artist">AMIEL THE POET</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Theater Corner -->
+                            <div class="stage-section">
+                                <h4 class="stage-title">Theater Corner</h4>
+                                <div class="performance-list">
+                                    <div class="performance-item">
+                                        <span class="time">10:30 - 11:20</span>
+                                        <span class="artist">JOIN US DRAMA GROUP (DOWA)</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">11:30 - 12:20</span>
+                                        <span class="artist">DARK TO LIGHT DRAMA GROUP (DZALEKA)</span>
+                                    </div>
+                                    <div class="performance-item">
+                                        <span class="time">12:30 - 13:00</span>
+                                        <span class="artist">MOBUTU COMEDY (DZALEKA)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Impact Section -->
+        <section class="impact-showcase" style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="impact-header text-center">
+                    <span class="section-tag">Our Impact</span>
+                    <h2 class="section-title">Creating Lasting Change</h2>
+                </div>
+                <div class="impact-cards">
+                    <div class="impact-card fade-up">
+                        <div class="impact-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Cultural Preservation</h3>
+                        <p>Celebrating and preserving diverse cultural traditions through music, dance, and art.</p>
+                        <ul class="impact-list">
+                            <li>20+ Traditional performances</li>
+                            <li>Cultural workshops</li>
+                            <li>Art exhibitions</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card fade-up">
+                        <div class="impact-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Community Building</h3>
+                        <p>Fostering understanding and connection between refugees and host communities.</p>
+                        <ul class="impact-list">
+                            <li>50,000+ Festival attendees</li>
+                            <li>Cross-cultural dialogues</li>
+                            <li>Community collaborations</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card fade-up">
+                        <div class="impact-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Economic Empowerment</h3>
+                        <p>Creating sustainable economic opportunities within the refugee community.</p>
+                        <ul class="impact-list">
+                            <li>750+ Jobs created</li>
+                            <li>400+ Host families benefited</li>
+                            <li>Local business growth</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Update the Media Coverage section -->
+        <section class="media-section" style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="media-header text-center">
+                    <span class="section-tag">Press Coverage</span>
+                    <h2 class="section-title">In The News</h2>
+                </div>
+                <div class="media-grid">
+                    <!-- UNHCR Coverage -->
+                    <article class="media-card fade-up">
+                        <div class="media-source">
+                            <div class="media-source-tag">UNHCR</div>
+                        </div>
+                        <div class="media-content">
+                            <span class="media-date">November 2023</span>
+                            <h4>"Refugee-led cultural festival turns 10 in Malawi"</h4>
+                            <p>Celebrating a decade of transforming narratives and creating opportunities through arts and culture.</p>
+                            <a href="https://www.unhcr.org/afr/news/stories/2023/11/654a1bb24/refugee-led-cultural-festival-turns-10-malawi.html" 
+                               target="_blank" 
+                               class="btn btn-secondary">Read Article</a>
+                        </div>
+                    </article>
+
+                    <!-- Deutsche Welle Coverage -->
+                    <article class="media-card fade-up">
+                        <div class="media-source">
+                            <div class="media-source-tag">Deutsche Welle</div>
+                        </div>
+                        <div class="media-content">
+                            <span class="media-date">2016</span>
+                            <h4>"Tumaini festival unites refugees and locals in Malawi"</h4>
+                            <p>"Tumaini" means "hope" in Swahili and for many residents of Dzaleka, the Tumaini festival means exactly that; an opportunity to forget their sufferings.</p>
+                            <a href="https://www.dw.com/en/tumaini-festival-unites-refugees-and-locals-in-malawi/a-36292772" 
+                               target="_blank" 
+                               class="btn btn-secondary">Read Article</a>
+                        </div>
+                    </article>
+
+                    <!-- BBC Coverage -->
+                    <article class="media-card fade-up">
+                        <div class="media-source">
+                            <div class="media-source-tag">BBC</div>
+                        </div>
+                        <div class="media-content">
+                            <span class="media-date">September 2021</span>
+                            <h4>"The refugee camp in Malawi giving people hope"</h4>
+                            <p>The Tumaini Festival, which means "hope" in Swahili, is an annual event that brings together refugees and locals through music and art.</p>
+                            <a href="https://www.bbc.com/news/world-africa-58441768" 
+                               target="_blank" 
+                               class="btn btn-secondary">Read Article</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="text-center" style="margin-top: var(--space-xl);">
+                    <a href="/pages/media-coverage.html" class="btn btn-primary">View All Coverage</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Update Newsletter Section -->
+        <section class="newsletter-section" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="newsletter-content text-center">
+                    <span class="section-tag">Stay Connected</span>
+                    <h2>Festival Updates</h2>
+                    <p>Subscribe to receive news, stories, and announcements about Tumaini Festival</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="newsletter-input" placeholder="Enter email address" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </div>
+                        <p class="form-note">Privacy protected. Unsubscribe available at any time.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Update Get Involved Section -->
+        <section id="get-involved" class="get-involved-section" style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="get-involved-header text-center">
+                    <span class="section-tag">Support</span>
+                    <h2 class="section-title">Supporting the Festival</h2>
+                    <p class="section-lead">Ways to contribute to this transformative cultural initiative</p>
+                </div>
+                <div class="involvement-options">
+                    <div class="involvement-card fade-up">
+                        <div class="card-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Volunteer</h3>
+                        <p>Join the team of dedicated volunteers supporting the festival's success.</p>
+                        <ul class="involvement-list">
+                            <li>Event support</li>
+                            <li>Artist liaison</li>
+                            <li>Community outreach</li>
+                        </ul>
+                        <a href="https://tumainiletu.org/contact-us/" class="btn btn-secondary">Learn More</a>
+                    </div>
+                    <div class="involvement-card fade-up">
+                        <div class="card-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Sponsor</h3>
+                        <p>Support the festival through sponsorship to create lasting impact.</p>
+                        <ul class="involvement-list">
+                            <li>Corporate sponsorship</li>
+                            <li>In-kind donations</li>
+                            <li>Media partnerships</li>
+                        </ul>
+                        <a href="https://tumainiletu.org/contact-us/" class="btn btn-secondary">Partner With Festival</a>
+                    </div>
+                    <div class="involvement-card fade-up">
+                        <div class="card-icon">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
+                        <h3>Perform</h3>
+                        <p>Artists can apply to be part of the diverse artistic program.</p>
+                        <ul class="involvement-list">
+                            <li>Music performances</li>
+                            <li>Dance showcases</li>
+                            <li>Art exhibitions</li>
+                        </ul>
+                        <a href="https://tumainiletu.org/contact-us/" class="btn btn-secondary">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Update Footer -->
         <footer class="footer">
-            <p>© 2024 Dzaleka.com x Tumaini Festival. All rights reserved.</p>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-info">
+                        <img src="assets/images/tumaini_festival_white_logo.svg" alt="Tumaini Festival" width="150" height="40">
+                        <p>Malawi's Premier Refugee-Led Cultural Festival</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/TumainiFestival" target="_blank" class="social-icon facebook" aria-label="Follow on Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/tumainifestival" target="_blank" class="social-icon instagram" aria-label="Follow on Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/TumainiFest" target="_blank" class="social-icon twitter" aria-label="Follow on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.youtube.com/c/TumainiFestival" target="_blank" class="social-icon youtube" aria-label="Subscribe on YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Festival Links</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#program">Program</a></li>
+                            <li><a href="https://tumainiletu.org/gallery/">Gallery</a></li>
+                            <li><a href="/pages/media-coverage.html">Media</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="https://tumainiletu.org/contact-us/">Volunteer</a></li>
+                            <li><a href="https://tumainiletu.org/contact-us/">Sponsor</a></li>
+                            <li><a href="https://tumainiletu.org/contact-us/">Perform</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <p>Dzaleka Refugee Camp<br>Dowa, Malawi</p>
+                        <a href="mailto:info@tumainifestival.org">info@tumainifestival.org</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Dzaleka.com x Tumaini Festival. All rights reserved.</p>
+                </div>
+            </div>
         </footer>
-    </div>
 
-    <script>
-        function updateCountdown() {
-            const festivalDate = new Date('2024-10-31T00:00:00').getTime();
-            const now = new Date().getTime();
-            const timeLeft = festivalDate - now;
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-        }
-
-        setInterval(updateCountdown, 1000);
-    </script>
+        <!-- Scripts -->
+        <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </main>
 </body>
-</html>
+</html> 

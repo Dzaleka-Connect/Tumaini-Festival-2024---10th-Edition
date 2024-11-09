@@ -1,0 +1,231 @@
+/* Program Page Specific Styles */
+
+/* Program Navigation */
+.program-nav {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid var(--color-gray-200);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.program-nav-btn {
+    padding: var(--space-sm) var(--space-lg);
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--color-gray-100);
+    color: var(--color-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.program-nav-btn:hover {
+    background: var(--color-gray-200);
+    transform: translateY(-2px);
+}
+
+.program-nav-btn.active {
+    background: var(--gradient-primary);
+    color: var(--color-light);
+}
+
+/* Program Days */
+.program-day {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.program-day.active {
+    display: block;
+}
+
+.day-title {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-xl);
+    color: var(--color-dark);
+    text-align: center;
+}
+
+/* Stage Sections */
+.stage-section {
+    background: var(--color-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.stage-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stage-title {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--color-gray-100);
+}
+
+/* Performance List */
+.performance-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.performance-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    padding: var(--space-md);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.performance-item:hover {
+    background: var(--color-gray-100);
+    transform: translateX(5px);
+}
+
+.time {
+    min-width: 120px;
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+}
+
+.performance-details {
+    flex: 1;
+}
+
+.performance-details h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-xs);
+    color: var(--color-dark);
+}
+
+.performance-details p {
+    font-size: 0.9rem;
+    color: var(--color-dark-600);
+}
+
+.artist {
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+/* Additional Information */
+.program-info {
+    background: var(--color-gray-50);
+    padding: var(--space-2xl) 0;
+    margin-top: var(--space-2xl);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+}
+
+.info-card {
+    text-align: center;
+    padding: var(--space-xl);
+    background: var(--color-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.info-card i {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+}
+
+.info-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-dark);
+}
+
+.info-card p {
+    color: var(--color-dark-600);
+    font-size: 0.95rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .program-nav {
+        padding: var(--space-md) 0;
+        margin-bottom: var(--space-lg);
+    }
+
+    .program-nav-btn {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.9rem;
+    }
+
+    .stage-section {
+        padding: var(--space-lg);
+    }
+
+    .performance-item {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .time {
+        min-width: auto;
+    }
+
+    .info-grid {
+        gap: var(--space-lg);
+    }
+
+    .info-card {
+        padding: var(--space-lg);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .program-nav {
+        display: none;
+    }
+
+    .program-day {
+        display: block !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: var(--space-2xl);
+    }
+
+    .stage-section {
+        box-shadow: none;
+        border: 1px solid var(--color-gray-200);
+    }
+} 
