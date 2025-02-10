@@ -93,42 +93,63 @@ class GalleryLightbox {
     }
 }
 
-// Mobile Menu
-class MobileMenu {
-    constructor() {
-        this.menu = document.querySelector('.mobile-menu');
-        this.toggle = document.querySelector('.mobile-menu-toggle');
-        this.bindEvents();
-    }
+// Mobile Menu Handler
+const initializeMobileMenu = () => {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (!mobileMenuToggle || !navLinks) return;
 
-    bindEvents() {
-        this.toggle.addEventListener('click', () => this.toggleMenu());
+    mobileMenuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
         
-        // Close menu on click outside
-        document.addEventListener('click', (e) => {
-            if (!this.menu.contains(e.target) && !this.toggle.contains(e.target)) {
-                this.closeMenu();
+        // Toggle aria-expanded
+        const isExpanded = navLinks.classList.contains('active');
+        mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+        
+        // Toggle menu icon
+        const spans = mobileMenuToggle.querySelectorAll('span');
+        spans.forEach((span, index) => {
+            if (isExpanded) {
+                if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                if (index === 1) span.style.opacity = '0';
+                if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -7px)';
+            } else {
+                span.style.transform = '';
+                span.style.opacity = '';
             }
         });
-    }
+    });
 
-    toggleMenu() {
-        this.menu.classList.toggle('active');
-        this.toggle.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    }
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenuToggle.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenuToggle.querySelectorAll('span').forEach(span => {
+                span.style.transform = '';
+                span.style.opacity = '';
+            });
+        }
+    });
 
-    closeMenu() {
-        this.menu.classList.remove('active');
-        this.toggle.classList.remove('active');
-        document.body.classList.remove('menu-open');
-    }
-}
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenuToggle.querySelectorAll('span').forEach(span => {
+                span.style.transform = '';
+                span.style.opacity = '';
+            });
+        });
+    });
+};
 
 // Newsletter Form
 class NewsletterForm {
-    constructor() {
-        this.form = document.querySelector('.newsletter-form');
+    constructor(form) {
+        this.form = form;
         this.bindEvents();
     }
 
@@ -172,29 +193,35 @@ class NewsletterForm {
     }
 }
 
-// Initialize everything when DOM is loaded
+// Initialize all components
 document.addEventListener('DOMContentLoaded', () => {
     try {
-        initializeAnimations();
-        initializeNavbar();
+        // Core functionality
+        handleNavbarScroll();
         initializeMobileMenu();
         initializeSmoothScroll();
-        initializeNewsletterForm();
+
+        // Initialize animations if needed
+        if (typeof initializeAnimations === 'function') {
+            initializeAnimations();
+        }
         
-        // Initialize disclaimer if it exists
-        const disclaimer = document.getElementById('disclaimer');
-        if (disclaimer) {
-            initializeDisclaimer();
+        // Initialize forms if they exist
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            new NewsletterForm(newsletterForm);
         }
 
-        initializePagination();
-        initializeProgramNavigation();
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            new ContactForm(contactForm);
+        }
     } catch (error) {
         console.error('Error initializing components:', error);
     }
 });
 
-// Initialize Intersection Observer for animations
+// Intersection Observer for animations
 const initializeAnimations = () => {
     const observerOptions = {
         threshold: 0.1,
@@ -216,60 +243,20 @@ const initializeAnimations = () => {
     });
 };
 
-// Handle Navbar Scroll Effect
-const initializeNavbar = () => {
+// Navbar scroll behavior
+function handleNavbarScroll() {
     const navbar = document.querySelector('.navbar');
-    const scrollThreshold = 50;
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > scrollThreshold) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-};
-
-// Mobile Menu Handler
-const initializeMobileMenu = () => {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const body = document.body;
-
-    // Guard clause - return early if elements don't exist
-    if (!menuToggle || !navLinks) {
-        console.warn('Mobile menu elements not found');
-        return;
+    const scrolled = window.scrollY > 50;
+    if (scrolled) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
     }
+}
 
-    // Toggle menu
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        body.classList.toggle('menu-open');
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        // Check if menu is active and elements exist before handling click
-        if (menuToggle.classList.contains('active') && 
-            !menuToggle.contains(e.target) && 
-            !navLinks.contains(e.target)) {
-            menuToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-    });
-
-    // Close menu when clicking nav links
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-            body.classList.remove('menu-open');
-        });
-    });
-};
+// Initialize navbar scroll behavior
+window.addEventListener('scroll', handleNavbarScroll);
+handleNavbarScroll(); // Call once on load to set initial state
 
 // Smooth Scroll for Anchor Links
 const initializeSmoothScroll = () => {
@@ -283,80 +270,6 @@ const initializeSmoothScroll = () => {
                     block: 'start'
                 });
             }
-        });
-    });
-};
-
-// Newsletter Form Handler
-const initializeNewsletterForm = () => {
-    const form = document.querySelector('.newsletter-form');
-    if (!form) return;
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const emailInput = form.querySelector('input[type="email"]');
-        const submitButton = form.querySelector('button[type="submit"]');
-        
-        try {
-            // Add loading state
-            submitButton.disabled = true;
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
-            
-            // Simulate API call (replace with actual API endpoint)
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            // Show success message
-            showNotification('Successfully subscribed!', 'success');
-            form.reset();
-        } catch (error) {
-            // Show error message
-            showNotification('Subscription failed. Please try again.', 'error');
-        } finally {
-            // Reset button state
-            submitButton.disabled = false;
-            submitButton.innerHTML = 'Subscribe';
-        }
-    });
-};
-
-// Notification Helper
-const showNotification = (message, type = 'success') => {
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.innerHTML = `
-        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
-        ${message}
-    `;
-    
-    document.body.appendChild(notification);
-    
-    // Remove notification after 3 seconds
-    setTimeout(() => {
-        notification.remove();
-    }, 3000);
-};
-
-// Program Schedule Filter
-const initializeProgramFilter = () => {
-    const filterButtons = document.querySelectorAll('.program-filter');
-    const programDays = document.querySelectorAll('.program-day');
-
-    filterButtons?.forEach(button => {
-        button.addEventListener('click', () => {
-            const day = button.dataset.day;
-            
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            // Show/hide program days
-            programDays.forEach(programDay => {
-                if (day === 'all' || programDay.dataset.day === day) {
-                    programDay.style.display = 'block';
-                } else {
-                    programDay.style.display = 'none';
-                }
-            });
         });
     });
 };
@@ -405,61 +318,54 @@ const initializeDisclaimer = () => {
 
 // Pagination
 const initializePagination = () => {
-    const articlesPerPage = 6;
-    const mediaGrid = document.querySelector('.media-grid');
-    const articles = Array.from(mediaGrid.querySelectorAll('.media-card'));
-    const totalPages = Math.ceil(articles.length / articlesPerPage);
-    let currentPage = 1;
+    const paginationContainer = document.querySelector('.pagination');
+    // Guard clause - return early if pagination elements don't exist
+    if (!paginationContainer) {
+        return;
+    }
 
-    const updateArticlesDisplay = (page) => {
-        articles.forEach((article, index) => {
-            const startIndex = (page - 1) * articlesPerPage;
-            const endIndex = startIndex + articlesPerPage;
-            
-            if (index >= startIndex && index < endIndex) {
-                article.style.display = 'flex';
-            } else {
-                article.style.display = 'none';
-            }
-        });
-    };
+    const prevButton = document.querySelector('.pagination-prev');
+    const nextButton = document.querySelector('.pagination-next');
+    const pageButtons = document.querySelectorAll('.pagination-page');
+    
+    if (!prevButton || !nextButton || !pageButtons.length) {
+        return;
+    }
+
+    let currentPage = 1;
+    const totalPages = pageButtons.length;
 
     const updatePaginationButtons = () => {
-        const prevBtn = document.querySelector('[data-page="prev"]');
-        const nextBtn = document.querySelector('[data-page="next"]');
-        const numberBtns = document.querySelectorAll('.pagination-number');
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage === totalPages;
 
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage === totalPages;
-
-        numberBtns.forEach(btn => {
-            btn.classList.toggle('active', parseInt(btn.dataset.page) === currentPage);
+        pageButtons.forEach((button, index) => {
+            button.classList.toggle('active', index + 1 === currentPage);
         });
     };
 
-    // Event Listeners
-    document.querySelectorAll('.pagination-btn, .pagination-number').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const action = btn.dataset.page;
-            
-            if (action === 'prev' && currentPage > 1) {
-                currentPage--;
-            } else if (action === 'next' && currentPage < totalPages) {
-                currentPage++;
-            } else if (action !== 'prev' && action !== 'next') {
-                currentPage = parseInt(action);
-            }
-
-            updateArticlesDisplay(currentPage);
+    prevButton?.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
             updatePaginationButtons();
-            
-            // Smooth scroll to top of media section
-            document.querySelector('.media-coverage').scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
+    nextButton?.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            updatePaginationButtons();
+        }
+    });
+
+    pageButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            currentPage = index + 1;
+            updatePaginationButtons();
         });
     });
 
-    // Initialize first page
-    updateArticlesDisplay(1);
+    // Initialize button states
     updatePaginationButtons();
 };
 

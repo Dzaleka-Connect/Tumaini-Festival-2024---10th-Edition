@@ -5,21 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Media coverage of Tumaini Festival - Africa's Premier Refugee-Led Arts & Cultural Festival">
     <title>Media Coverage - Tumaini Festival</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://services.dzaleka.com/images/dzaleka-digital-heritage.png">
+    
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script defer src="../assets/js/main.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V28XG9CN72"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-V28XG9CN72');
+    </script>
+
 </head>
 <body>
+    <!-- Navigation -->
     <header class="navbar">
         <nav class="nav-container">
-            <a href="/" class="nav-logo">
-                <img src="/assets/images/logo.svg" alt="Tumaini Festival Logo" width="150" height="40">
+            <a href="../index.html" class="nav-logo">
+                <img src="../assets/images/logo.svg" alt="Tumaini Festival Archive" width="40" height="40">
             </a>
             
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <ul class="nav-links">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/pages/about.html" class="nav-link">About</a></li>
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="https://tumainiletu.org/gallery/" class="nav-link">Gallery</a></li>
-                <li><a href="/pages/media-coverage.html" class="nav-link active">Media</a></li>
+                <li><a href="media-coverage.html" class="nav-link active">Media</a></li>
+                <li><a href="#program" class="nav-link">Program</a></li>
                 <li><a href="https://tumainiletu.org/contact-us/" class="nav-link btn btn-primary">Get Involved</a></li>
             </ul>
         </nav>
@@ -28,7 +53,7 @@
     <main>
         <section class="hero-small">
             <div class="container">
-                <h1 class="section-title">Media Coverage</h1>
+                <h1>Media Coverage</h1>
                 <p class="hero-subtitle">Tumaini Festival in the News</p>
             </div>
         </section>
@@ -37,33 +62,46 @@
             <div class="container">
                 <div class="media-grid">
                     <!-- Times Malawi - Latest Coverage -->
-                    <article class="media-card fade-up">
+                    <article class="media-card fade-up" onclick="window.open('https://times.mw/tumaini-fest-readies-for-10th-anniversary/', '_blank')">
                         <div class="media-source">
                             <div class="media-source-tag">Times Malawi</div>
                         </div>
                         <div class="media-content">
-                            <span class="media-date">November 6, 2023</span>
-                            <h4>"Tumaini Festival thrills"</h4>
-                            <p>Dzaleka Refugee Camp in Dowa turned into a hive of fun as thousands of people patronised this year's edition of Tumaini Festival, with performances from Patience Namadingo, Faith Mussa and Lawi among others.</p>
-                            <a href="https://times.mw/tumaini-festival-thrills/" target="_blank" class="btn btn-secondary">Read Article</a>
+                            <span class="media-date">November 2023</span>
+                            <h4>"Tumaini Festival serves perfect 10-year anniversary"</h4>
+                            <p>From Thursday through to Sunday, fun lovers were treated to extensive artistic performances during the 2024 edition of Tumaini Festival at Dzaleka Refugee Camp in Dowa District.</p>
+                            <a href="https://times.mw/tumaini-fest-readies-for-10th-anniversary/" target="_blank" class="btn btn-secondary" onclick="event.stopPropagation()">Read Article</a>
                         </div>
                     </article>
 
-                    <!-- UNHCR Coverage -->
-                    <article class="media-card fade-up">
+                    <!-- Malawi 24 Coverage -->
+                    <article class="media-card fade-up" onclick="window.open('https://malawi24.com/2023/11/02/2023-tumaini-festival-starts-today/', '_blank')">
                         <div class="media-source">
-                            <div class="media-source-tag">UNHCR</div>
+                            <div class="media-source-tag">Malawi 24</div>
                         </div>
                         <div class="media-content">
-                            <span class="media-date">November 7, 2023</span>
-                            <h4>"Refugee-led cultural festival turns 10 in Malawi"</h4>
-                            <p>The Tumaini Festival has grown from a small event to one that attracts tens of thousands of visitors and provides opportunities for refugees and locals to interact.</p>
-                            <a href="https://www.unhcr.org/news/stories/2023/11/654a1bb24/refugee-led-cultural-festival-turns-10-malawi" target="_blank" class="btn btn-secondary">Read Article</a>
+                            <span class="media-date">November 2, 2023</span>
+                            <h4>"2023 Tumaini festival starts today"</h4>
+                            <p>The festival features top performances from local artists such as TayGrin, Eli Njuchi, Suffix, along with talented performers from Dzaleka including Amahoro drummers, Dzaleka Acrobatics, and Salama Africa dancers.</p>
+                            <a href="https://malawi24.com/2023/11/02/2023-tumaini-festival-starts-today/" target="_blank" class="btn btn-secondary" onclick="event.stopPropagation()">Read Article</a>
+                        </div>
+                    </article>
+
+                    <!-- Deutsche Welle Coverage -->
+                    <article class="media-card fade-up" onclick="window.open('https://www.dw.com/en/tumaini-festival-uniting-refugees-through-culture/video-67687611', '_blank')">
+                        <div class="media-source">
+                            <div class="media-source-tag">Deutsche Welle</div>
+                        </div>
+                        <div class="media-content">
+                            <span class="media-date">December 20, 2023</span>
+                            <h4>"Tumaini Festival: Uniting refugees through culture"</h4>
+                            <p>DW visits the Tumaini Festival which celebrates the heritage of refugees at Dzaleka refugee camp in Malawi, featuring the story of its founder, exiled Congolese poetry artist Trésor.</p>
+                            <a href="https://www.dw.com/en/tumaini-festival-uniting-refugees-through-culture/video-67687611" target="_blank" class="btn btn-secondary" onclick="event.stopPropagation()">Watch Video</a>
                         </div>
                     </article>
 
                     <!-- Al Jazeera Coverage -->
-                    <article class="media-card fade-up">
+                    <article class="media-card fade-up" onclick="window.open('https://www.aljazeera.com/features/2019/11/3/malawi-refugee-camp-festival-showcases-talents-of-people-on-the-move', '_blank')">
                         <div class="media-source">
                             <div class="media-source-tag">Al Jazeera</div>
                         </div>
@@ -71,25 +109,12 @@
                             <span class="media-date">November 3, 2019</span>
                             <h4>"Malawi refugee camp festival showcases talents of people on the move"</h4>
                             <p>Annual event brings together locals and people living in Dzaleka refugee camp to celebrate music, dance, poetry and more.</p>
-                            <a href="https://www.aljazeera.com/features/2019/11/3/malawi-refugee-camp-festival-showcases-talents-of-people-on-the-move" target="_blank" class="btn btn-secondary">Read Article</a>
-                        </div>
-                    </article>
-
-                    <!-- Deutsche Welle Coverage -->
-                    <article class="media-card fade-up">
-                        <div class="media-source">
-                            <div class="media-source-tag">Deutsche Welle</div>
-                        </div>
-                        <div class="media-content">
-                            <span class="media-date">November 2020</span>
-                            <h4>"Refugee-run festival goes virtual amid COVID-19"</h4>
-                            <p>The Tumaini Festival, usually held at Malawi's Dzaleka Refugee Camp, has found innovative ways to keep the music playing despite coronavirus restrictions.</p>
-                            <a href="https://www.dw.com/en/refugee-run-festival-goes-virtual-amid-covid-19/a-55621321" target="_blank" class="btn btn-secondary">Read Article</a>
+                            <a href="https://www.aljazeera.com/features/2019/11/3/malawi-refugee-camp-festival-showcases-talents-of-people-on-the-move" target="_blank" class="btn btn-secondary" onclick="event.stopPropagation()">Read Article</a>
                         </div>
                     </article>
 
                     <!-- BBC Coverage -->
-                    <article class="media-card fade-up">
+                    <article class="media-card fade-up" onclick="window.open('https://www.bbc.com/news/world-africa-58441768', '_blank')">
                         <div class="media-source">
                             <div class="media-source-tag">BBC</div>
                         </div>
@@ -97,12 +122,12 @@
                             <span class="media-date">September 2021</span>
                             <h4>"The refugee camp in Malawi giving people hope"</h4>
                             <p>The Tumaini Festival has become one of Malawi's largest cultural events, attracting thousands of visitors and helping to change perceptions about refugees.</p>
-                            <a href="https://www.bbc.com/news/world-africa-58441768" target="_blank" class="btn btn-secondary">Read Article</a>
+                            <a href="https://www.bbc.com/news/world-africa-58441768" target="_blank" class="btn btn-secondary" onclick="event.stopPropagation()">Read Article</a>
                         </div>
                     </article>
 
                     <!-- The Guardian Coverage -->
-                    <article class="media-card fade-up">
+                    <article class="media-card fade-up" onclick="window.open('https://www.theguardian.com/global-development/2019/nov/01/music-festival-brings-hope-to-refugees-in-malawi', '_blank')">
                         <div class="media-source">
                             <div class="media-source-tag">The Guardian</div>
                         </div>
@@ -110,142 +135,59 @@
                             <span class="media-date">November 1, 2019</span>
                             <h4>"Music festival brings hope to refugees in Malawi"</h4>
                             <p>The Tumaini festival at the Dzaleka camp aims to change perceptions about refugees by showcasing their many talents.</p>
-                            <a href="https://www.theguardian.com/global-development/2019/nov/01/music-festival-brings-hope-to-refugees-in-malawi" target="_blank" class="btn btn-secondary">Read Article</a>
+                            <a href="https://www.theguardian.com/global-development/2019/nov/01/music-festival-brings-hope-to-refugees-in-malawi" target="_blank" class="btn btn-secondary" onclick="event.stopPropagation()">Read Article</a>
                         </div>
                     </article>
-
-                    <!-- Times Malawi Coverage -->
-                    <article class="media-card fade-up">
-                        <div class="media-source">
-                            <div class="media-source-tag">Times Malawi</div>
-                        </div>
-                        <div class="media-content">
-                            <span class="media-date">October 25, 2023</span>
-                            <h4>"Tumaini Festival returns for 9th edition"</h4>
-                            <p>The free-of-charge annual Tumaini Festival is set to return for its ninth edition at Dzaleka Refugee Camp in Dowa District.</p>
-                            <a href="https://times.mw/tumaini-festival-returns-for-9th-edition/" target="_blank" class="btn btn-secondary">Read Article</a>
-                        </div>
-                    </article>
-
-                    <!-- Music In Africa Coverage -->
-                    <article class="media-card fade-up">
-                        <div class="media-source">
-                            <div class="media-source-tag">Music In Africa</div>
-                        </div>
-                        <div class="media-content">
-                            <span class="media-date">November 2023</span>
-                            <h4>"Tumaini Festival celebrates 10th anniversary"</h4>
-                            <p>The festival has grown to become Malawi's largest multicultural event, bringing together refugees and locals through music, dance, poetry, theater, and more.</p>
-                            <a href="https://www.musicinafrica.net/magazine/tumaini-festival-celebrates-10th-anniversary" target="_blank" class="btn btn-secondary">Read Article</a>
-                        </div>
-                    </article>
-
-                    <!-- Nyasa Times Coverage -->
-                    <article class="media-card fade-up">
-                        <div class="media-source">
-                            <div class="media-source-tag">Nyasa Times</div>
-                        </div>
-                        <div class="media-content">
-                            <span class="media-date">November 2022</span>
-                            <h4>"Tumaini Festival back with a bang"</h4>
-                            <p>The festival returned to full capacity after COVID-19 restrictions, featuring performances from local and international artists.</p>
-                            <a href="https://www.nyasatimes.com/tumaini-festival-back-with-a-bang/" target="_blank" class="btn btn-secondary">Read Article</a>
-                        </div>
-                    </article>
-
-                    <!-- Nation Online Coverage -->
-                    <article class="media-card fade-up">
-                        <div class="media-source">
-                            <div class="media-source-tag">Nation Online</div>
-                        </div>
-                        <div class="media-content">
-                            <span class="media-date">November 2021</span>
-                            <h4>"Tumaini Festival adapts to new normal"</h4>
-                            <p>The festival successfully implemented a hybrid format, combining physical and virtual elements to reach wider audiences.</p>
-                            <a href="https://www.mwnation.com/tumaini-festival-adapts-to-new-normal/" target="_blank" class="btn btn-secondary">Read Article</a>
-                        </div>
-                    </article>
-
-                    <!-- MBC Coverage -->
-                    <article class="media-card fade-up">
-                        <div class="media-source">
-                            <div class="media-source-tag">MBC</div>
-                        </div>
-                        <div class="media-content">
-                            <span class="media-date">October 2023</span>
-                            <h4>"Tumaini Festival to celebrate cultural diversity"</h4>
-                            <p>The festival continues to promote cultural exchange and understanding between refugees and host communities.</p>
-                            <a href="https://www.mbc.mw/tumaini-festival-to-celebrate-cultural-diversity/" target="_blank" class="btn btn-secondary">Read Article</a>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Pagination -->
-                <div class="pagination">
-                    <div class="container">
-                        <div class="pagination-controls">
-                            <button class="pagination-btn" data-page="prev" disabled>
-                                <i class="fas fa-chevron-left"></i>
-                                Previous
-                            </button>
-                            <div class="pagination-numbers">
-                                <button class="pagination-number active" data-page="1">1</button>
-                                <button class="pagination-number" data-page="2">2</button>
-                                <button class="pagination-number" data-page="3">3</button>
-                            </div>
-                            <button class="pagination-btn" data-page="next">
-                                Next
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-info">
-                    <img src="/assets/images/logo-white.svg" alt="Tumaini Festival" width="150" height="40">
-                    <p>Africa's Premier Refugee-Led Cultural Festival</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/TumainiFestival" target="_blank" class="social-icon facebook" aria-label="Follow us on Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/tumainifestival" target="_blank" class="social-icon instagram" aria-label="Follow us on Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://twitter.com/TumainiFest" target="_blank" class="social-icon twitter" aria-label="Follow us on Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.youtube.com/c/TumainiFestival" target="_blank" class="social-icon youtube" aria-label="Follow us on YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
+                    <img src="../assets/images/logo.svg" alt="Tumaini Festival Archive" class="footer-logo" width="150" height="40">
+                    <h3>Tumaini Festival Archive</h3>
+                    <p>Documenting the history and impact of Africa's Premier Refugee-Led Arts & Cultural Festival at Dzaleka Refugee Camp, Malawi.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="/#about">About Us</a></li>
-                        <li><a href="/pages/program.html">Program</a></li>
-                        <li><a href="https://tumainiletu.org/gallery/">Gallery</a></li>
-                        <li><a href="/pages/media-coverage.html">Media</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="media-coverage.html">Media</a></li>
+                        <li><a href="https://tumainiletu.org/gallery/" target="_blank">Gallery</a></li>
+                        <li><a href="https://tumainiletu.org/contact-us/" target="_blank">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <p>Dzaleka Refugee Camp<br>Dowa, Malawi</p>
-                    <a href="mailto:info@tumainifestival.org">info@tumainifestival.org</a>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/tumainifestival" target="_blank" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/tumainifestival" target="_blank" aria-label="Follow us on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/tumainifestival" target="_blank" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/tumainifestival" target="_blank" aria-label="Subscribe to our YouTube channel">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Dzaleka.com x Tumaini Festival. All rights reserved.</p>
+                <p>&copy; 2024 Tumaini Festival Archive. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="../assets/js/main.js"></script>
 </body>
-</html> 
+</html>
