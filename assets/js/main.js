@@ -12,14 +12,25 @@ const loadFestivalData = async () => {
 
 // Timeline Navigation
 const initializeTimeline = async () => {
-    const data = await loadFestivalData();
     const timelineContent = document.querySelector('.timeline-content');
     
-    if (data && data.festivals) {
-        Object.entries(data.festivals).reverse().forEach(([year, festival]) => {
-            const timelineCard = createTimelineCard(year, festival);
-            timelineContent.appendChild(timelineCard);
-        });
+    if (timelineContent) {
+        showLoading(timelineContent);
+        
+        try {
+            const data = await loadFestivalData();
+            
+            if (data && data.festivals) {
+                Object.entries(data.festivals).reverse().forEach(([year, festival]) => {
+                    const timelineCard = createTimelineCard(year, festival);
+                    timelineContent.appendChild(timelineCard);
+                });
+            }
+        } catch (error) {
+            console.error('Error initializing timeline:', error);
+        } finally {
+            hideLoading(timelineContent);
+        }
     }
 };
 
@@ -98,52 +109,55 @@ const initializeMobileMenu = () => {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
-    if (!mobileMenuToggle || !navLinks) return;
-
-    mobileMenuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+    if (mobileMenuToggle && navLinks) {
+        // Track menu state
+        let isMenuOpen = false;
         
-        // Toggle aria-expanded
-        const isExpanded = navLinks.classList.contains('active');
-        mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+        // Toggle menu function
+        const toggleMenu = () => {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active', isMenuOpen);
+            mobileMenuToggle.setAttribute('aria-expanded', isMenuOpen);
+            
+            // Focus trap when menu is open
+            if (isMenuOpen) {
+                // Get all focusable elements in nav
+                const focusableElements = navLinks.querySelectorAll('a, button');
+                if (focusableElements.length > 0) {
+                    // Focus the first element after opening
+                    setTimeout(() => {
+                        focusableElements[0].focus();
+                    }, 100);
+                }
+            }
+        };
         
-        // Toggle menu icon
-        const spans = mobileMenuToggle.querySelectorAll('span');
-        spans.forEach((span, index) => {
-            if (isExpanded) {
-                if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                if (index === 1) span.style.opacity = '0';
-                if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -7px)';
-            } else {
-                span.style.transform = '';
-                span.style.opacity = '';
+        // Click event
+        mobileMenuToggle.addEventListener('click', toggleMenu);
+        
+        // Keyboard events for accessibility
+        mobileMenuToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
             }
         });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!mobileMenuToggle.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            mobileMenuToggle.querySelectorAll('span').forEach(span => {
-                span.style.transform = '';
-                span.style.opacity = '';
-            });
-        }
-    });
-
-    // Close menu when clicking on a link
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            mobileMenuToggle.querySelectorAll('span').forEach(span => {
-                span.style.transform = '';
-                span.style.opacity = '';
-            });
+        
+        // Close menu when pressing Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                toggleMenu();
+                mobileMenuToggle.focus(); // Return focus to toggle button
+            }
         });
-    });
+        
+        // Handle clicks outside the menu to close it
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                toggleMenu();
+            }
+        });
+    }
 };
 
 // Newsletter Form
@@ -390,4 +404,31 @@ const initializeProgramNavigation = () => {
         const dayId = button.dataset.day;
         document.getElementById(dayId)?.classList.add('active');
     });
+};
+
+// Loading indicator functions
+const showLoading = (container) => {
+    if (!container) return;
+    
+    // Create loading spinner if it doesn't exist
+    if (!container.querySelector('.loading-spinner')) {
+        const spinner = document.createElement('div');
+        spinner.className = 'loading-spinner';
+        spinner.innerHTML = '<div class="spinner-circle"></div><p>Loading...</p>';
+        container.appendChild(spinner);
+    }
+    
+    // Show the spinner
+    const spinner = container.querySelector('.loading-spinner');
+    spinner.style.display = 'flex';
+};
+
+const hideLoading = (container) => {
+    if (!container) return;
+    
+    // Hide the spinner if it exists
+    const spinner = container.querySelector('.loading-spinner');
+    if (spinner) {
+        spinner.style.display = 'none';
+    }
 };

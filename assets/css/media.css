@@ -138,22 +138,7 @@
     line-height: 1.6;
 }
 
-.btn-secondary {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: var(--gradient-secondary);
-    color: var(--color-light);
-    border-radius: var(--radius-full);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 3;
-}
-
-.btn-secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
-}
+/* Removed btn-secondary styles as they're now in style.css */
 
 /* Animations */
 .fade-up {

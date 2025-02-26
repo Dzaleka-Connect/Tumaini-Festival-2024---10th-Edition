@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="An unofficial archive celebrating the Tumaini Festival at Dzaleka Refugee Camp, Malawi - the world's only refugee camp-based festival">
+    
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://tumaini-festival.dzaleka.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tumaini-festival.dzaleka.com/">
+    <meta property="og:title" content="Tumaini Festival - Dzaleka Refugee Camp">
+    <meta property="og:description" content="An unofficial archive celebrating the Tumaini Festival at Dzaleka Refugee Camp, Malawi - the world's only refugee camp-based festival">
+    <meta property="og:image" content="https://idsb.tmgrup.com.tr/ly/uploads/images/2024/11/04/353422.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tumaini-festival.dzaleka.com/">
+    <meta property="twitter:title" content="Tumaini Festival - Dzaleka Refugee Camp">
+    <meta property="twitter:description" content="An unofficial archive celebrating the Tumaini Festival at Dzaleka Refugee Camp, Malawi - the world's only refugee camp-based festival">
+    <meta property="twitter:image" content="https://idsb.tmgrup.com.tr/ly/uploads/images/2024/11/04/353422.jpg">
+    
     <title>Tumaini Festival - Dzaleka Refugee Camp</title>
     
     <!-- Preload critical assets -->
@@ -45,24 +63,23 @@
                 </p>
             </div>
         </div>
-    </div>
 
         <nav class="nav-container">
             <a href="/" class="nav-logo">
                 <img src="assets/images/logo.svg" alt="Tumaini Festival Logo" width="150" height="40">
             </a>
             
-            <ul class="nav-links">
-                <li><a href="#about" class="nav-link">Home</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/pages/about.html" class="nav-link">About</a></li>
-                <li><a href="https://tumainiletu.org/gallery/" class="nav-link">Gallery</a></li>
-                <li><a href="https://tumainiletu.org/in-the-media/" class="nav-link">Media</a></li>
+                <li><a href="/pages/media-coverage.html" class="nav-link">Media</a></li>
+                <li><a href="#festival-timeline" class="nav-link">Timeline</a></li>
                 <li><a href="#program" class="nav-link">Program</a></li>
-                <li><a href="https://tumainiletu.org/contact-us/" class="nav-link btn btn-primary">Get Involved</a></li>
+                <li><a href="https://tumainiletu.org/contact-us/" class="nav-link btn btn-primary" target="_blank" rel="noopener">Get Involved</a></li>
             </ul>
 
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </nav>
     </header>
@@ -267,6 +284,58 @@
             </div>
         </section>
 
+        <!-- Festival Impact Section -->
+        <section class="impact-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Making A Difference</span>
+                    <h2>Festival Impact Beyond Entertainment</h2>
+                    <p class="section-description">Tumaini Festival creates lasting positive change in the lives of refugees and the broader community</p>
+                </div>
+                
+                <div class="impact-grid">
+                    <div class="impact-card fade-up">
+                        <div class="impact-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Economic Empowerment</h3>
+                        <p>The festival has supported 2,335 entrepreneurs within Dzaleka, creating 1,500 jobs for refugees and boosting the camp's economy significantly.</p>
+                    </div>
+                    
+                    <div class="impact-card fade-up">
+                        <div class="impact-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3>Advocacy & Awareness</h3>
+                        <p>Reaching over 61 million people through media coverage, Tumaini amplifies refugee voices and raises awareness about refugee rights globally.</p>
+                    </div>
+                    
+                    <div class="impact-card fade-up">
+                        <div class="impact-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Cultural Exchange</h3>
+                        <p>The festival has welcomed 304 performing acts from Malawi, Africa, and around the world, creating unique opportunities for cultural dialogue.</p>
+                    </div>
+                    
+                    <div class="impact-card fade-up">
+                        <div class="impact-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Psychological Well-being</h3>
+                        <p>Through artistic expression and community celebration, Tumaini promotes self-expression, connection, and a positive outlook on life for refugees.</p>
+                    </div>
+                </div>
+                
+                <div class="impact-quote text-center fade-up">
+                    <blockquote>
+                        "Tumaini Festival brings exceptional hope into the lives of people. It's about more than music. It's about instilling hope in the hopeless."
+                        <cite>— Skeffa Chimoto, Musician</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
         <!-- Update Newsletter Section -->
         <section class="newsletter-section" style="padding: var(--space-2xl) 0;">
             <div class="container">
@@ -348,17 +417,20 @@
                         <img src="assets/images/tumaini_festival_white_logo.svg" alt="Tumaini Festival" width="150" height="40">
                         <p>Malawi's Premier Refugee-Led Cultural Festival</p>
                         <div class="social-links">
-                            <a href="https://www.facebook.com/TumainiFestival" target="_blank" class="social-icon facebook" aria-label="Follow on Facebook">
+                            <a href="https://www.facebook.com/tumainifestival" target="_blank" class="social-icon facebook" aria-label="Follow on Facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                             <a href="https://www.instagram.com/tumainifestival" target="_blank" class="social-icon instagram" aria-label="Follow on Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://twitter.com/TumainiFest" target="_blank" class="social-icon twitter" aria-label="Follow on Twitter">
-                                <i class="fab fa-twitter"></i>
+                            <a href="https://x.com/tumainifestival" target="_blank" class="social-icon twitter" aria-label="Follow on X (formerly Twitter)">
+                                <i class="fab fa-x-twitter"></i>
                             </a>
-                            <a href="https://www.youtube.com/c/TumainiFestival" target="_blank" class="social-icon youtube" aria-label="Subscribe on YouTube">
-                                <i class="fab fa-youtube"></i>
+                            <a href="https://www.linkedin.com/company/tumaini-festival" target="_blank" class="social-icon linkedin" aria-label="Follow on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://tiktok.com/@tumainifestival" target="_blank" class="social-icon tiktok" aria-label="Follow on TikTok">
+                                <i class="fab fa-tiktok"></i>
                             </a>
                         </div>
                     </div>
@@ -388,7 +460,7 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2024 Dzaleka.com x Tumaini Festival. All rights reserved.</p>
+                    <p>&copy; 2025 Dzaleka.com x Tumaini Festival. All rights reserved.</p>
                 </div>
             </div>
         </footer>

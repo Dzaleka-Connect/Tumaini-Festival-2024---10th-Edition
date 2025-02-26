@@ -2,8 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="Media coverage of Tumaini Festival - Africa's Premier Refugee-Led Arts & Cultural Festival">
+    
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://tumaini-festival.dzaleka.com/pages/media-coverage.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tumaini-festival.dzaleka.com/pages/media-coverage.html">
+    <meta property="og:title" content="Media Coverage - Tumaini Festival">
+    <meta property="og:description" content="Media coverage of Tumaini Festival - Africa's Premier Refugee-Led Arts & Cultural Festival">
+    <meta property="og:image" content="https://tumainiletu.org/wp-content/uploads/2024/10/Badre_Bahaji_Tumaini_festival21_-31-1.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tumaini-festival.dzaleka.com/pages/media-coverage.html">
+    <meta property="twitter:title" content="Media Coverage - Tumaini Festival">
+    <meta property="twitter:description" content="Media coverage of Tumaini Festival - Africa's Premier Refugee-Led Arts & Cultural Festival">
+    <meta property="twitter:image" content="https://tumainiletu.org/wp-content/uploads/2024/10/Badre_Bahaji_Tumaini_festival21_-31-1.jpg">
+    
     <title>Media Coverage - Tumaini Festival</title>
 
     <!-- Favicon -->
@@ -33,24 +51,22 @@
                 <img src="../assets/images/logo.svg" alt="Tumaini Festival Archive" width="40" height="40">
             </a>
             
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
             
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="https://tumainiletu.org/gallery/" class="nav-link">Gallery</a></li>
                 <li><a href="media-coverage.html" class="nav-link active">Media</a></li>
-                <li><a href="#program" class="nav-link">Program</a></li>
-                <li><a href="https://tumainiletu.org/contact-us/" class="nav-link btn btn-primary">Get Involved</a></li>
+                <li><a href="../index.html#festival-timeline" class="nav-link">Timeline</a></li>
+                <li><a href="../index.html#program" class="nav-link">Program</a></li>
+                <li><a href="https://tumainiletu.org/contact-us/" class="nav-link btn btn-primary" target="_blank" rel="noopener">Get Involved</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero-small">
             <div class="container">
                 <h1>Media Coverage</h1>
@@ -143,49 +159,62 @@
         </section>
     </main>
 
-    <footer class="footer">
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-info">
-                    <img src="../assets/images/logo.svg" alt="Tumaini Festival Archive" class="footer-logo" width="150" height="40">
-                    <h3>Tumaini Festival Archive</h3>
+                    <img src="../assets/images/tumaini_festival_white_logo.svg" alt="Tumaini Festival" width="150" height="40">
                     <p>Documenting the history and impact of Africa's Premier Refugee-Led Arts & Cultural Festival at Dzaleka Refugee Camp, Malawi.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="media-coverage.html">Media</a></li>
-                        <li><a href="https://tumainiletu.org/gallery/" target="_blank">Gallery</a></li>
-                        <li><a href="https://tumainiletu.org/contact-us/" target="_blank">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect With Us</h4>
                     <div class="social-links">
-                        <a href="https://facebook.com/tumainifestival" target="_blank" aria-label="Follow us on Facebook">
+                        <a href="https://www.facebook.com/tumainifestival" target="_blank" class="social-icon facebook" aria-label="Follow on Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://twitter.com/tumainifestival" target="_blank" aria-label="Follow us on Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/tumainifestival" target="_blank" aria-label="Follow us on Instagram">
+                        <a href="https://www.instagram.com/tumainifestival" target="_blank" class="social-icon instagram" aria-label="Follow on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://youtube.com/tumainifestival" target="_blank" aria-label="Subscribe to our YouTube channel">
-                            <i class="fab fa-youtube"></i>
+                        <a href="https://x.com/tumainifestival" target="_blank" class="social-icon twitter" aria-label="Follow on X (formerly Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/tumaini-festival" target="_blank" class="social-icon linkedin" aria-label="Follow on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://tiktok.com/@tumainifestival" target="_blank" class="social-icon tiktok" aria-label="Follow on TikTok">
+                            <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
                 </div>
+                <div class="footer-links">
+                    <h4>Festival Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#program">Program</a></li>
+                        <li><a href="https://tumainiletu.org/gallery/">Gallery</a></li>
+                        <li><a href="https://tumainiletu.org/in-the-media/">Media</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="https://tumainiletu.org/contact-us/">Volunteer</a></li>
+                        <li><a href="https://tumainiletu.org/contact-us/">Sponsor</a></li>
+                        <li><a href="https://tumainiletu.org/contact-us/">Perform</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Tumaini Letu<br>
+                        P.O.Box 1459<br>
+                        Lilongwe</p>
+                    <a href="mailto:info@tumainiletu.org">info@tumainiletu.org</a>
+                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Tumaini Festival Archive. All rights reserved.</p>
+                <p>&copy; 2025 Dzaleka.com x Tumaini Festival. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    <!-- Footer -->
 
     <!-- Scripts -->
     <script src="../assets/js/main.js"></script>
