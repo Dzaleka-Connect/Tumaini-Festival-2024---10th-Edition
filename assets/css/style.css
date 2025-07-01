@@ -3418,3 +3418,58 @@ textarea {
         transform: rotate(360deg);
     }
 }
+
+.hero-buttons {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: stretch;
+  }
+}
+
+.disclaimer-close {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #7c5c00;
+  cursor: pointer;
+  padding: 0 0.5em;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.disclaimer-close:hover,
+.disclaimer-close:focus {
+  opacity: 1;
+  color: #FF4D00;
+}
+
+/* Remove margin-top from .navbar, use a class for offset */
+.navbar.with-disclaimer {
+  margin-top: 48px; /* Adjust if disclaimer height changes */
+}
+
+.navbar {
+  transition: margin-top 0.3s;
+}
+
+/* Remove margin-top from .navbar.with-disclaimer */
+.navbar.with-disclaimer {
+  margin-top: 0;
+}
+
+body.with-disclaimer {
+  padding-top: 48px; /* Height of disclaimer */
+  transition: padding-top 0.3s;
+}

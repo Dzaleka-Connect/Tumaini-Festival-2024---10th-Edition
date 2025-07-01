@@ -1,12 +1,21 @@
+<!--
+DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are not affiliated with, endorsed by, or connected to the Tumaini Festival or its organizers. For official information and the latest event details, visit: https://services.dzaleka.com/events/tumaini-festival-2025/ or https://tumainiletu.org
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="An unofficial archive celebrating the Tumaini Festival at Dzaleka Refugee Camp, Malawi - the world's only refugee camp-based festival">
+    <meta name="keywords" content="Tumaini Festival, Dzaleka Refugee Camp, Malawi, Refugee Festival, Arts, Culture, Music, Community, Tumaini Letu, African Festival, Cultural Exchange, Humanitarian, Nonprofit, Event, 2025">
+    <meta name="robots" content="index, follow">
+    <link rel="alternate" href="https://tumaini-festival.dzaleka.com/" hreflang="en" />
+    <meta name="theme-color" content="#FF4D00">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://services.dzaleka.com/images/dzaleka-digital-heritage.png">
     
     <!-- Canonical Tag -->
     <link rel="canonical" href="https://tumaini-festival.dzaleka.com/">
+    <link rel="canonical" href="https://services.dzaleka.com/events/tumaini-festival-2025/" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -47,6 +56,63 @@
 
         gtag('config', 'G-V28XG9CN72');
     </script>
+
+    <!-- Structured Data: Organization & Event -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tumaini Festival",
+      "url": "https://tumaini-festival.dzaleka.com/",
+      "logo": "https://tumaini-festival.dzaleka.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/tumainifestival",
+        "https://www.instagram.com/tumainifestival/",
+        "https://x.com/tumainifestival",
+        "https://www.linkedin.com/company/tumaini-festival",
+        "https://tiktok.com/@tumainifestival"
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "email": "info@tumainiletu.org",
+        "contactType": "customer support"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Festival",
+      "name": "Tumaini Festival 2025",
+      "startDate": "2025-10-30",
+      "endDate": "2025-11-01",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "url": "https://services.dzaleka.com/events/tumaini-festival-2025/",
+      "sameAs": [
+        "https://services.dzaleka.com/events/tumaini-festival-2025/",
+        "https://tumainiletu.org/tumaini-festival/"
+      ],
+      "location": {
+        "@type": "Place",
+        "name": "Dzaleka Refugee Camp Main Ground",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dowa",
+          "addressCountry": "MW"
+        }
+      },
+      "image": [
+        "https://idsb.tmgrup.com.tr/ly/uploads/images/2024/11/04/353422.jpg"
+      ],
+      "description": "Malawi's Premier Refugee-Led Arts & Cultural Festival celebrating a decade of cultural exchange and community impact.",
+      "organizer": {
+        "@type": "Organization",
+        "name": "Tumaini Letu",
+        "url": "https://tumainiletu.org"
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -56,11 +122,12 @@
     <header class="navbar">
 
         <!-- Disclaimer Banner -->
-        <div class="disclaimer-banner" role="alert">
+        <div class="disclaimer-banner" role="alert" id="disclaimer-banner">
             <div class="container">
                 <p class="disclaimer-text">
                     <strong>DISCLAIMER:</strong> This is an unofficial archive website. We are not affiliated with, endorsed by, or connected to the Tumaini Festival or its organizers. For official information, please visit <a href="https://tumainiletu.org" target="_blank" rel="noopener">tumainiletu.org</a>
                 </p>
+                <button class="disclaimer-close" aria-label="Close disclaimer" onclick="closeDisclaimer()">&times;</button>
             </div>
         </div>
 
@@ -102,13 +169,19 @@
                         <div class="festival-dates">
                             <span class="date-pill">
                                 <i class="far fa-calendar-alt"></i>
-                                Dates To Be Announced (2025)
+                                30 October – 1 November 2025
                             </span>
                             <span class="location-pill">
                                 <i class="fas fa-map-marker-alt"></i>
                                 Dzaleka Refugee Camp, Dowa, Malawi
                             </span>
+                            <span class="edition-pill" style="background: var(--primary-color); color: #fff; border-radius: 999px; padding: 0.25em 0.75em; margin-left: 0.5em; font-weight: 600; font-size: 0.95em; vertical-align: middle;">11th Edition</span>
                         </div>
+                    </div>
+                    <!-- Countdown Timer -->
+                    <div class="countdown-wrapper" style="margin-top: 1.5rem; text-align: center;">
+                        <span id="countdown-label" class="countdown-label" style="font-weight: 500; font-size: 1.1em; color: var(--primary-color);">Countdown to Festival:</span>
+                        <div id="countdown" class="countdown" aria-labelledby="countdown-label" style="font-size: 1.5em; font-weight: 700; letter-spacing: 0.05em; margin-top: 0.25em;"></div>
                     </div>
                     <h1 class="mega-title">Tumaini Festival</h1>
                     <p class="hero-subtitle">Malawi's Premier Refugee-Led Arts & Cultural Festival</p>
@@ -117,9 +190,9 @@
                             <i class="fas fa-hands-helping"></i>
                             Support the Festival
                         </a>
-                        <a href="https://tumainiletu.org/tumaini-festival/" class="btn btn-outline btn-lg">
-                            <i class="fas fa-info-circle"></i>
-                            Learn More
+                        <a href="https://services.dzaleka.com/events/tumaini-festival-2025/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                            <i class="fas fa-calendar-day"></i>
+                            Festival Event Details
                         </a>
                     </div>
                     <div class="festival-note">
@@ -148,6 +221,21 @@
             </div>
         </section>
 
+        <!-- Call for Artists Section -->
+        <section class="call-for-artists-section" style="background: var(--gradient-primary); color: #fff; padding: var(--space-2xl) 0;">
+            <div class="container text-center">
+                <span class="section-tag" style="background: #fff; color: var(--color-primary);">Call for Artists</span>
+                <h2 class="section-title" style="color: #fff;">Perform at Tumaini Festival 2025</h2>
+                <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto var(--space-lg);">
+                    Are you an artist, musician, or performer? Share your talent at the world's only festival inside a refugee camp. Apply now to join us in Dzaleka Refugee Camp, Malawi, October 30 – November 1, 2025.<br>
+                    <strong>Applications must be submitted before July 31st, 2025.</strong>
+                </p>
+                <a href="https://forms.gle/7CUYTSP77r5gcG4F9" class="btn btn-primary btn-lg" target="_blank" rel="noopener" style="margin-top: var(--space-md);">
+                    <i class="fas fa-paint-brush"></i> Apply to Perform
+                </a>
+            </div>
+        </section>
+
         <!-- About Section -->
         <section id="about" class="about-section" style="padding-top: var(--space-3xl);">
             <div class="container">
@@ -171,7 +259,7 @@
                     <h2 class="section-title">Tumaini Festival 2025</h2>
                     <div class="announcement-box">
                         <i class="fas fa-calendar-alt announcement-icon"></i>
-                        <p class="announcement-text">Stay tuned for the announcement of Tumaini Festival 2025 dates!</p>
+                        <p class="announcement-text">Tumaini Festival 2025 will take place from 30 October to 1 November!</p>
                         <p class="announcement-subtext">Join Tumaini Letu for another celebration of arts, culture, and unity at Dzaleka Refugee Camp, Malawi</p>
                         <a href="https://tumainiletu.org/contact-us/" class="btn btn-primary" style="margin-top: var(--space-lg);">Get Updates</a>
                     </div>
@@ -329,7 +417,7 @@
                 
                 <div class="impact-quote text-center fade-up">
                     <blockquote>
-                        "Tumaini Festival brings exceptional hope into the lives of people. It's about more than music. It's about instilling hope in the hopeless."
+                        "Tumaini Festival brings exceptional hope into the lives of people. There are times when you perform at Tumaini and observe from people's reactions that the event is about more than music. It's about instilling hope in the hopeless,"
                         <cite>— Skeffa Chimoto, Musician</cite>
                     </blockquote>
                 </div>
@@ -469,6 +557,51 @@
         <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
         <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script>
+        // Countdown Timer Script
+        (function() {
+            const countdownEl = document.getElementById('countdown');
+            if (!countdownEl) return;
+            // Festival start date: 30 October 2025, 00:00:00 Africa/Blantyre (UTC+2)
+            const festivalDate = new Date('2025-10-30T00:00:00+02:00');
+            function updateCountdown() {
+                const now = new Date();
+                const diff = festivalDate - now;
+                if (diff <= 0) {
+                    countdownEl.textContent = 'The festival has begun!';
+                    return;
+                }
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+                countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
+        </script>
+        <script>
+        // Add with-disclaimer class on load if disclaimer is visible
+        window.addEventListener('DOMContentLoaded', function() {
+          var banner = document.getElementById('disclaimer-banner');
+          if (banner && banner.style.display !== 'none') {
+            document.body.classList.add('with-disclaimer');
+          }
+        });
+        function closeDisclaimer() {
+          const banner = document.getElementById('disclaimer-banner');
+          if (banner) banner.style.display = 'none';
+          document.body.classList.remove('with-disclaimer');
+        }
+        </script>
+        <script>
+          // Console disclaimer for developers and inspectors
+          console.log(
+            "%cDISCLAIMER: This is an unofficial archive for Tumaini Festival.\nFor official information, visit https://services.dzaleka.com/events/tumaini-festival-2025/ or https://tumainiletu.org",
+            "color: #FF4D00; font-size: 1.2em; font-weight: bold; padding: 8px 0;"
+          );
+        </script>
     </main>
 </body>
 </html>
