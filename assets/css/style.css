@@ -1878,8 +1878,9 @@ h1, h2, h3, h4, h5, h6 {
 .disclaimer-banner {
     background-color: var(--color-warning-light);
     padding: var(--space-sm) 0;
-    position: relative;
-    z-index: 1000;
+    position: relative; /* sit above nav inside header */
+    z-index: 1;
+    border-bottom: 1px solid rgba(133, 77, 14, 0.2);
 }
 
 .disclaimer-text {
@@ -1921,6 +1922,7 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
+.with-disclaimer .navbar { top: 0; }
 
 /* Update Main Content Styles */
 main {
@@ -3455,21 +3457,5 @@ textarea {
   color: #FF4D00;
 }
 
-/* Remove margin-top from .navbar, use a class for offset */
-.navbar.with-disclaimer {
-  margin-top: 48px; /* Adjust if disclaimer height changes */
-}
-
-.navbar {
-  transition: margin-top 0.3s;
-}
-
-/* Remove margin-top from .navbar.with-disclaimer */
-.navbar.with-disclaimer {
-  margin-top: 0;
-}
-
-body.with-disclaimer {
-  padding-top: 48px; /* Height of disclaimer */
-  transition: padding-top 0.3s;
-}
+/* Smooth transition when banner toggles */
+.navbar { transition: top 0.3s; }

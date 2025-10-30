@@ -221,20 +221,7 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
             </div>
         </section>
 
-        <!-- Call for Artists Section -->
-        <section class="call-for-artists-section" style="background: var(--gradient-primary); color: #fff; padding: var(--space-2xl) 0;">
-            <div class="container text-center">
-                <span class="section-tag" style="background: #fff; color: var(--color-primary);">Call for Artists</span>
-                <h2 class="section-title" style="color: #fff;">Perform at Tumaini Festival 2025</h2>
-                <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto var(--space-lg);">
-                    Are you an artist, musician, or performer? Share your talent at the world's only festival inside a refugee camp. Apply now to join us in Dzaleka Refugee Camp, Malawi, October 30 – November 1, 2025.<br>
-                    <strong>Applications must be submitted before July 31st, 2025.</strong>
-                </p>
-                <a href="https://forms.gle/7CUYTSP77r5gcG4F9" class="btn btn-primary btn-lg" target="_blank" rel="noopener" style="margin-top: var(--space-md);">
-                    <i class="fas fa-paint-brush"></i> Apply to Perform
-                </a>
-            </div>
-        </section>
+        
 
         <!-- About Section -->
         <section id="about" class="about-section" style="padding-top: var(--space-3xl);">
@@ -255,18 +242,640 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
         <section id="program" class="program-section" style="padding: var(--space-3xl) 0;">
             <div class="container">
                 <div class="program-header text-center">
-                    <span class="section-tag">Coming Soon</span>
-                    <h2 class="section-title">Tumaini Festival 2025</h2>
-                    <div class="announcement-box">
-                        <i class="fas fa-calendar-alt announcement-icon"></i>
-                        <p class="announcement-text">Tumaini Festival 2025 will take place from 30 October to 1 November!</p>
-                        <p class="announcement-subtext">Join Tumaini Letu for another celebration of arts, culture, and unity at Dzaleka Refugee Camp, Malawi</p>
-                        <a href="https://tumainiletu.org/contact-us/" class="btn btn-primary" style="margin-top: var(--space-lg);">Get Updates</a>
+                    <span class="section-tag">Official Schedule</span>
+                    <h2 class="section-title">Tumaini Festival 2025 Program</h2>
+                    <p class="section-lead">30 October – 1 November 2025 · Dzaleka Refugee Camp, Malawi</p>
+                    <p class="section-lead" style="margin-top: .25rem; font-weight: 700; color: var(--primary-color);">Theme: "Rising With Resilience"</p>
+                </div>
+
+                <div class="program-days" style="margin-top: var(--space-2xl);">
+                    <div id="now-next" class="now-next" aria-live="polite" aria-atomic="true">
+                        <div class="now-next-row">
+                            <div class="nn-block">
+                                <div class="nn-label">Now</div>
+                                <div class="nn-value" id="nn-now">Checking…</div>
+                            </div>
+                            <div class="nn-block">
+                                <div class="nn-label">Next</div>
+                                <div class="nn-value" id="nn-next">Checking…</div>
+                            </div>
+                            <div class="nn-block">
+                                <div class="nn-label">Local Time</div>
+                                <div class="nn-value" id="nn-time"></div>
+                            </div>
+                            <div class="nn-block">
+                                <div class="nn-label">Calendar</div>
+                                <div class="nn-value" style="display:flex; gap:.5rem; flex-wrap:wrap;">
+                                    <button id="ics-current" class="btn" type="button" style="padding:.4rem .6rem;">Add Current</button>
+                                    <button id="ics-next" class="btn" type="button" style="padding:.4rem .6rem;">Add Next</button>
+                                </div>
+                            </div>
+                            <div class="nn-block">
+                                <div class="nn-label">Time Format</div>
+                                <div class="nn-value"><button id="time-toggle" class="btn" type="button" style="padding:.4rem .6rem;">Switch to 12h</button></div>
+                            </div>
+                            <div class="nn-block">
+                                <div class="nn-label">Timezone</div>
+                                <div class="nn-value"><button id="tz-toggle" class="btn" type="button" style="padding:.4rem .6rem;">Use Africa/Blantyre</button></div>
+                            </div>
+                            <div class="nn-block">
+                                <button id="scroll-to-now" class="btn btn-primary" style="width:100%; padding:.5rem 1rem;">Scroll to Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-tools" role="search" aria-label="Filter program">
+                        <input id="program-search" type="search" placeholder="Search artists or acts" aria-label="Search artists or acts" />
+                        <button id="program-clear" class="btn" type="button">Clear</button>
+                        <span id="program-count" class="program-count" aria-live="polite"></span>
+                    </div>
+                    <div class="stage-filters" aria-label="Filter by stage" role="group">
+                        <button class="stage-pill" data-stage="elikiva" aria-pressed="true">Elikiva</button>
+                        <button class="stage-pill" data-stage="khizera" aria-pressed="true">Khizera</button>
+                        <button class="stage-pill" data-stage="cultural" aria-pressed="true">Cultural</button>
+                        <button class="stage-pill" data-stage="theater" aria-pressed="true">Theater</button>
+                        <button class="stage-pill" data-stage="workshops" aria-pressed="true">Workshops</button>
+                        <button class="stage-pill" data-stage="poetry" aria-pressed="true">Poetry</button>
+                    </div>
+                    <nav class="day-nav" aria-label="Jump to day">
+                        <a class="day-pill" href="#thu">Thu 30 Oct</a>
+                        <a class="day-pill" href="#fri">Fri 31 Oct</a>
+                        <a class="day-pill" href="#sat-poetry">Sat Poetry</a>
+                        <a class="day-pill" href="#sat-main">Sat Main</a>
+                    </nav>
+
+                    <details id="thu" open>
+                        <summary style="cursor: pointer; padding: 1rem; border: 1px solid var(--border-color); border-radius: 12px; background: var(--surface-2); font-weight: 700;">
+                            Thursday · October 30, 2025 — Elikiva Stage
+                        </summary>
+                        <div style="padding: 1rem 0 0 0;">
+                            <ul class="schedule-list" data-stage="elikiva">
+                                <li><span class="time">15:00–15:15</span> <span class="act">Pop Kevo</span></li>
+                                <li><span class="time">15:15–15:30</span> <span class="act">Ngoma Ras</span></li>
+                                <li><span class="time">15:30–15:45</span> <span class="act">Samji Baby</span></li>
+                                <li><span class="time">15:45–16:00</span> <span class="act">Click Dance Crew</span></li>
+                                <li><span class="time">16:00–16:15</span> <span class="act">Kenedy Jazz</span></li>
+                                <li><span class="time">16:15–16:30</span> <span class="act">Jades</span></li>
+                                <li><span class="time">16:30–16:45</span> <span class="act">Savior Brothers</span></li>
+                                <li><span class="time">16:45–17:00</span> <span class="act">Sepa Artist</span></li>
+                                <li><span class="time">17:00–17:15</span> <span class="act">Delvas Lyon</span></li>
+                                <li><span class="time">17:15–17:30</span> <span class="act">Young Simba</span></li>
+                                <li><span class="time">17:30–17:45</span> <span class="act">Wilfred London</span></li>
+                                <li><span class="time">17:45–18:00</span> <span class="act">B-Max</span></li>
+                                <li><span class="time">18:00–19:30</span> <span class="act">Film Screening: “We Name Ourselves”</span></li>
+                                <li><span class="time">19:30–19:45</span> <span class="act">Forus</span></li>
+                                <li><span class="time">19:45–20:00</span> <span class="act">Power Dance</span></li>
+                                <li><span class="time">20:00–20:15</span> <span class="act">Chosen Diekings</span></li>
+                                <li><span class="time">20:15–20:30</span> <span class="act">Starngona Croull</span></li>
+                                <li><span class="time">20:30–20:45</span> <span class="act">Americano</span></li>
+                                <li><span class="time">20:45–21:00</span> <span class="act">Gloria Mubirki</span></li>
+                                <li><span class="time">21:00–21:15</span> <span class="act">Mr. Tembo</span></li>
+                                <li><span class="time">21:15–21:30</span> <span class="act">Cris Wapa Easy</span></li>
+                                <li><span class="time">21:30–21:45</span> <span class="act">Free To Dream</span></li>
+                                <li><span class="time">21:45–22:00</span> <span class="act">Roshboy</span></li>
+                                <li><span class="time">22:00–22:15</span> <span class="act">Kenzo B</span></li>
+                                <li><span class="time">22:15–22:30</span> <span class="act">Boys Band</span></li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details id="fri">
+                        <summary style="cursor: pointer; padding: 1rem; border: 1px solid var(--border-color); border-radius: 12px; background: var(--surface-2); font-weight: 700; margin-top: var(--space-lg);">
+                            Friday · October 31, 2025 — Multi‑Stage Program
+                        </summary>
+                        <div style="padding: 1rem 0 0 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+                            <div>
+                                <h3 style="margin: 0 0 .5rem 0;">Elikiva Stage</h3>
+                                <ul class="schedule-list" data-stage="elikiva">
+                                    <li><span class="time">09:00–10:00</span> <span class="act">DJ La Perle</span></li>
+                                    <li><span class="time">10:00–10:30</span> <span class="act">Zouma Boy</span></li>
+                                    <li><span class="time">10:30–11:00</span> <span class="act">Full Swagger Miss Dance</span></li>
+                                    <li><span class="time">11:00–11:30</span> <span class="act">Maestros</span></li>
+                                    <li><span class="time">11:30–13:00</span> <span class="act">Film Screening</span></li>
+                                    <li><span class="time">13:00–13:30</span> <span class="act">The Dream Dance Crew</span></li>
+                                    <li><span class="time">13:30–14:00</span> <span class="act">Kimbunga</span></li>
+                                    <li><span class="time">14:00–14:20</span> <span class="act">Issabel King</span></li>
+                                    <li><span class="time">14:20–14:50</span> <span class="act">Astonics Chozemba</span></li>
+                                    <li><span class="time">14:50–15:20</span> <span class="act">Milefa Sisters</span></li>
+                                    <li><span class="time">15:20–15:30</span> <span class="act">Sound of Trumpet</span></li>
+                                    <li><span class="time">15:30–15:50</span> <span class="act">Thima</span></li>
+                                    <li><span class="time">15:50–16:05</span> <span class="act">Opening</span></li>
+                                    <li><span class="time">16:05–18:05</span> <span class="act">Cultural Grounds (Crossover)</span></li>
+                                    <li><span class="time">18:05–18:25</span> <span class="act">The Big Six Band</span></li>
+                                    <li><span class="time">18:25–18:55</span> <span class="act">Man Vee</span></li>
+                                    <li><span class="time">18:55–19:25</span> <span class="act">Mvafubi Band</span></li>
+                                    <li><span class="time">19:25–19:45</span> <span class="act">Choba</span></li>
+                                    <li><span class="time">19:45–20:15</span> <span class="act">Topik</span></li>
+                                    <li><span class="time">20:15–20:45</span> <span class="act">Jay Jay Cee</span></li>
+                                    <li><span class="time">20:45–21:05</span> <span class="act">Joe Kellz</span></li>
+                                    <li><span class="time">21:05–21:25</span> <span class="act">Raven Duchess</span></li>
+                                    <li><span class="time">21:25–22:35</span> <span class="act">Chizmo Sting</span></li>
+                                    <li><span class="time">22:35–23:05</span> <span class="act">Sean Morgan</span></li>
+                                    <li><span class="time">23:05–00:05</span> <span class="act">Saint Realest</span></li>
+                                    <li><span class="time">00:05–01:05</span> <span class="act">DJ Hugo</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 style="margin: 0 0 .5rem 0;">Khizera Stage</h3>
+                                <ul class="schedule-list" data-stage="khizera">
+                                    <li><span class="time">09:30–10:30</span> <span class="act">DJ Kalma</span></li>
+                                    <li><span class="time">10:30–11:00</span> <span class="act">John B Emma</span></li>
+                                    <li><span class="time">11:00–11:30</span> <span class="act">Ndayiziveye Eliude</span></li>
+                                    <li><span class="time">11:30–12:00</span> <span class="act">Shekinah</span></li>
+                                    <li><span class="time">12:00–12:30</span> <span class="act">Safisha Dance Crew</span></li>
+                                    <li><span class="time">12:30–13:00</span> <span class="act">Brother Beni</span></li>
+                                    <li><span class="time">13:00–13:40</span> <span class="act">Idel J BK Boy</span></li>
+                                    <li><span class="time">13:40–14:00</span> <span class="act">Wayabi Comedy Group</span></li>
+                                    <li><span class="time">14:00–14:20</span> <span class="act">Britt Cee</span></li>
+                                    <li><span class="time">14:20–14:40</span> <span class="act">Tarzan CB</span></li>
+                                    <li><span class="time">14:40–15:00</span> <span class="act">Sentram</span></li>
+                                    <li><span class="time">15:00–15:20</span> <span class="act">Slik Stenner</span></li>
+                                    <li><span class="time">15:20–15:40</span> <span class="act">Young Saidi</span></li>
+                                    <li><span class="time">15:40–16:00</span> <span class="act">Kenton Mbale</span></li>
+                                    <li><span class="time">16:00–16:20</span> <span class="act">Zachi</span></li>
+                                    <li><span class="time">16:20–16:50</span> <span class="act">Faz B The Rapper</span></li>
+                                    <li><span class="time">16:50–17:10</span> <span class="act">Twatasha Kachali</span></li>
+                                    <li><span class="time">17:10–17:40</span> <span class="act">Hosanna Music</span></li>
+                                    <li><span class="time">17:40–18:00</span> <span class="act">Njuchi Wapa Easy</span></li>
+                                    <li><span class="time">18:00–18:20</span> <span class="act">Black Squad</span></li>
+                                    <li><span class="time">18:20–18:40</span> <span class="act">Ranny D</span></li>
+                                    <li><span class="time">18:40–19:00</span> <span class="act">Jay Blue</span></li>
+                                    <li><span class="time">19:00–19:20</span> <span class="act">Simmy Stings</span></li>
+                                    <li><span class="time">19:20–19:50</span> <span class="act">DJ Harshfao</span></li>
+                                    <li><span class="time">19:50–20:20</span> <span class="act">Jeg Tellem</span></li>
+                                    <li><span class="time">20:20–20:50</span> <span class="act">Eagle Extra Dancers</span></li>
+                                    <li><span class="time">20:50–21:30</span> <span class="act">Ben Band</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 style="margin: 0 0 .5rem 0;">Cultural Ground</h3>
+                                <ul class="schedule-list" data-stage="cultural">
+                                    <li><span class="time">16:05–16:35</span> <span class="act">ASAFA</span></li>
+                                    <li><span class="time">16:35–17:05</span> <span class="act">Mganda</span></li>
+                                    <li><span class="time">17:05–17:35</span> <span class="act">Indenganabaganzi</span></li>
+                                    <li><span class="time">17:35–18:05</span> <span class="act">Dust In The Air</span></li>
+                                </ul>
+                                <h3 style="margin: 1rem 0 .5rem 0;">Theater</h3>
+                                <ul class="schedule-list" data-stage="theater">
+                                    <li><span class="time">10:00–10:30</span> <span class="act">Gambona Zene</span></li>
+                                    <li><span class="time">10:40–11:10</span> <span class="act">White Vision</span></li>
+                                    <li><span class="time">11:20–11:50</span> <span class="act">Dark To Light</span></li>
+                                    <li><span class="time">12:00–12:25</span> <span class="act">The Chanco Travelling Theater</span></li>
+                                    <li><span class="time">12:35–13:00</span> <span class="act">Local Iriswaga</span></li>
+                                    <li><span class="time">13:00–13:30</span> <span class="act">Fusion Theatre Group</span></li>
+                                    <li><span class="time">13:40–14:10</span> <span class="act">Shandoflex</span></li>
+                                    <li><span class="time">14:10–14:40</span> <span class="act">Mobutu Comedy</span></li>
+                                    <li><span class="time">14:50–15:20</span> <span class="act">Hephzibah Arts</span></li>
+                                    <li><span class="time">16:00–17:30</span> <span class="act">Film Screening</span></li>
+                                </ul>
+                                <h3 style="margin: 1rem 0 .5rem 0;">Workshops</h3>
+                                <ul class="schedule-list" data-stage="workshops">
+                                    <li><span class="time">07:00–08:00</span> <span class="act">Morning Yoga</span></li>
+                                    <li><span class="time">09:00–12:00</span> <span class="act">Music Workshop</span></li>
+                                    <li><span class="time">09:00–12:00</span> <span class="act">Fashion Designer Workshop</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details id="sat-poetry">
+                        <summary style="cursor: pointer; padding: 1rem; border: 1px solid var(--border-color); border-radius: 12px; background: var(--surface-2); font-weight: 700; margin-top: var(--space-lg);">
+                            Saturday · November 1, 2025 — Poetry Program
+                        </summary>
+                        <div style="padding: 1rem 0 0 0;">
+                            <ul class="schedule-list" data-stage="poetry">
+                                <li><span class="time">09:00–09:15</span> <span class="act">Introduction</span></li>
+                                <li><span class="time">09:15–09:50</span> <span class="act">Workshops</span></li>
+                                <li><span class="time">09:50–09:55</span> <span class="act">Amina The Poetess</span></li>
+                                <li><span class="time">09:55–10:00</span> <span class="act">Jamaah</span></li>
+                                <li><span class="time">10:00–10:10</span> <span class="act">Trinity</span></li>
+                                <li><span class="time">10:10–10:20</span> <span class="act">Marvelous</span></li>
+                                <li><span class="time">10:20–10:25</span> <span class="act">Andrenie</span></li>
+                                <li><span class="time">10:25–10:35</span> <span class="act">Cassie</span></li>
+                                <li><span class="time">10:35–10:40</span> <span class="act">King Jopa</span></li>
+                                <li><span class="time">10:40–10:50</span> <span class="act">The Branches Art</span></li>
+                                <li><span class="time">10:50–11:00</span> <span class="act">Mercy Mbeta</span></li>
+                                <li><span class="time">11:00–11:10</span> <span class="act">Madalitso Blessed</span></li>
+                                <li><span class="time">11:10–11:20</span> <span class="act">Charles Matenga</span></li>
+                                <li><span class="time">11:20–11:25</span> <span class="act">Rhomia</span></li>
+                                <li><span class="time">11:25–11:30</span> <span class="act">Skywalkers</span></li>
+                                <li><span class="time">11:30–11:35</span> <span class="act">Madalitso Rodi</span></li>
+                                <li><span class="time">11:35–11:40</span> <span class="act">Eagle Pro</span></li>
+                                <li><span class="time">11:40–11:50</span> <span class="act">Joseph Kabvala</span></li>
+                                <li><span class="time">11:50–12:10</span> <span class="act">The Voice</span></li>
+                                <li><span class="time">12:10–12:20</span> <span class="act">Blessings Marshapiyo</span></li>
+                                <li><span class="time">12:20–12:40</span> <span class="act">Rudy Ruhigita</span></li>
+                                <li><span class="time">12:40–12:50</span> <span class="act">Paul Philip</span></li>
+                                <li><span class="time">12:50–13:10</span> <span class="act">Nelson MBT</span></li>
+                                <li><span class="time">13:10–13:20</span> <span class="act">Tao Jeka</span></li>
+                                <li><span class="time">13:20–13:30</span> <span class="act">Milcah Faith</span></li>
+                                <li><span class="time">13:30–13:40</span> <span class="act">Ayap</span></li>
+                                <li><span class="time">13:40–14:30</span> <span class="act">Firstborn Poet</span></li>
+                                <li><span class="time">14:30–14:50</span> <span class="act">Wanga</span></li>
+                                <li><span class="time">14:50–15:20</span> <span class="act">Thuthukani</span></li>
+                                <li><span class="time">15:20–15:30</span> <span class="act">Jonathan Bin</span></li>
+                                <li><span class="time">15:30–16:00</span> <span class="act">Mental Health Awareness</span></li>
+                                <li><span class="time">16:00</span> <span class="act">Closing</span></li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details id="sat-main">
+                        <summary style="cursor: pointer; padding: 1rem; border: 1px solid var(--border-color); border-radius: 12px; background: var(--surface-2); font-weight: 700; margin-top: var(--space-lg);">
+                            Saturday · November 1, 2025 — Main Program (Multi‑Stage)
+                        </summary>
+                        <div style="padding: 1rem 0 0 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+                            <div>
+                                <h3 style="margin: 0 0 .5rem 0;">Elikiva Stage</h3>
+                                <ul class="schedule-list" data-stage="elikiva">
+                                    <li><span class="time">09:00–10:00</span> <span class="act">DJ BA</span></li>
+                                    <li><span class="time">10:00–10:30</span> <span class="act">Sefra Wiser</span></li>
+                                    <li><span class="time">10:30–11:00</span> <span class="act">Seben Jazz Music</span></li>
+                                    <li><span class="time">11:00–11:30</span> <span class="act">Lighters Dance</span></li>
+                                    <li><span class="time">11:30–13:00</span> <span class="act">Film Screening</span></li>
+                                    <li><span class="time">13:00–13:25</span> <span class="act">Teen Wolf</span></li>
+                                    <li><span class="time">13:25–13:50</span> <span class="act">MGO Dance</span></li>
+                                    <li><span class="time">13:50–14:15</span> <span class="act">Adobe Dance Crew</span></li>
+                                    <li><span class="time">14:15–14:35</span> <span class="act">Theophilus</span></li>
+                                    <li><span class="time">14:35–15:05</span> <span class="act">Cultural Grounds (Crossover)</span></li>
+                                    <li><span class="time">15:05–16:05</span> <span class="act">Mitengeli</span></li>
+                                    <li><span class="time">16:05–16:25</span> <span class="act">Madalitso Banda</span></li>
+                                    <li><span class="time">16:25–17:15</span> <span class="act">Omega Bebesa</span></li>
+                                    <li><span class="time">17:15–17:45</span> <span class="act">Vankson</span></li>
+                                    <li><span class="time">17:45–18:15</span> <span class="act">Djemira Classic</span></li>
+                                    <li><span class="time">18:15–18:50</span> <span class="act">Loiso</span></li>
+                                    <li><span class="time">18:50–19:35</span> <span class="act">Amidu Elian</span></li>
+                                    <li><span class="time">19:35–19:55</span> <span class="act">Mr. Mraize</span></li>
+                                    <li><span class="time">19:55–20:15</span> <span class="act">Giresse Inno</span></li>
+                                    <li><span class="time">20:15–20:55</span> <span class="act">Wailing Brothers</span></li>
+                                    <li><span class="time">20:55–21:30</span> <span class="act">Apama Arts</span></li>
+                                    <li><span class="time">21:30–21:50</span> <span class="act">Salama Africa</span></li>
+                                    <li><span class="time">21:50–22:10</span> <span class="act">Abo Blaze</span></li>
+                                    <li><span class="time">22:10–22:30</span> <span class="act">Forus Dance Crew</span></li>
+                                    <li><span class="time">22:30–23:10</span> <span class="act">Sife</span></li>
+                                    <li><span class="time">23:10–23:50</span> <span class="act">Manyasa Band</span></li>
+                                    <li><span class="time">23:50–00:20</span> <span class="act">Lady Aika</span></li>
+                                    <li><span class="time">00:20–00:50</span> <span class="act">Driemo</span></li>
+                                    <li><span class="time">01:20–02:00</span> <span class="act">DJ La Perle</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 style="margin: 0 0 .5rem 0;">Khizera Stage</h3>
+                                <ul class="schedule-list" data-stage="khizera">
+                                    <li><span class="time">09:30–10:30</span> <span class="act">DJ Leonard</span></li>
+                                    <li><span class="time">10:30–11:00</span> <span class="act">King David</span></li>
+                                    <li><span class="time">11:00–11:30</span> <span class="act">Bonex</span></li>
+                                    <li><span class="time">11:30–12:00</span> <span class="act">Son De La Restauration</span></li>
+                                    <li><span class="time">12:00–12:30</span> <span class="act">Dzaleka Kids</span></li>
+                                    <li><span class="time">12:30–13:00</span> <span class="act">DJ Esther</span></li>
+                                    <li><span class="time">13:00–13:20</span> <span class="act">Mufles Dance Crew</span></li>
+                                    <li><span class="time">13:20–13:40</span> <span class="act">Sowers Dance Crew</span></li>
+                                    <li><span class="time">13:40–14:00</span> <span class="act">Ben Tunez</span></li>
+                                    <li><span class="time">14:00–14:20</span> <span class="act">T‑Wolf</span></li>
+                                    <li><span class="time">14:20–14:40</span> <span class="act">Young Sunna</span></li>
+                                    <li><span class="time">14:40–15:20</span> <span class="act">Zabuni</span></li>
+                                    <li><span class="time">15:20–15:40</span> <span class="act">Black Snack Dance Crew</span></li>
+                                    <li><span class="time">15:40–16:00</span> <span class="act">Rosi Kapend</span></li>
+                                    <li><span class="time">16:00–16:20</span> <span class="act">Legends Dance Crew</span></li>
+                                    <li><span class="time">16:20–16:40</span> <span class="act">Cour d’Adoration</span></li>
+                                    <li><span class="time">16:40–17:00</span> <span class="act">Maestro Tite</span></li>
+                                    <li><span class="time">17:00–17:20</span> <span class="act">Mizati Band</span></li>
+                                    <li><span class="time">17:20–17:40</span> <span class="act">Mr. Tembo</span></li>
+                                    <li><span class="time">17:40–18:00</span> <span class="act">Damacia</span></li>
+                                    <li><span class="time">18:00–18:20</span> <span class="act">Jahlop & The Heavy Weight Rockers</span></li>
+                                    <li><span class="time">18:20–18:40</span> <span class="act">Silflame</span></li>
+                                    <li><span class="time">18:40–19:00</span> <span class="act">Natenalist Rasta</span></li>
+                                    <li><span class="time">19:00–19:20</span> <span class="act">Bos Mes K.A</span></li>
+                                    <li><span class="time">19:20–19:40</span> <span class="act">Gift Gospel</span></li>
+                                    <li><span class="time">19:40–20:00</span> <span class="act">Redbull Dance Crew</span></li>
+                                    <li><span class="time">20:00–20:30</span> <span class="act">Free To Dream</span></li>
+                                    <li><span class="time">20:30–21:00</span> <span class="act">Cyborg 001</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 style="margin: 0 0 .5rem 0;">Cultural Ground</h3>
+                                <ul class="schedule-list" data-stage="cultural">
+                                    <li><span class="time">14:35–15:05</span> <span class="act">Gule Wamkulu</span></li>
+                                    <li><span class="time">15:05–15:35</span> <span class="act">Amahoro</span></li>
+                                    <li><span class="time">15:35–16:05</span> <span class="act">Fashion Show</span></li>
+                                </ul>
+                                <h3 style="margin: 1rem 0 .5rem 0;">Theater</h3>
+                                <ul class="schedule-list" data-stage="theater">
+                                    <li><span class="time">10:00–10:45</span> <span class="act">Mzuzu University Theater</span></li>
+                                    <li><span class="time">10:55–11:15</span> <span class="act">Better Generations Theater</span></li>
+                                    <li><span class="time">11:25–12:25</span> <span class="act">YDC Theatre</span></li>
+                                    <li><span class="time">12:35–13:00</span> <span class="act">Linga Creative</span></li>
+                                    <li><span class="time">13:40–14:10</span> <span class="act">Chinsapo Arts Theater</span></li>
+                                    <li><span class="time">14:20–14:45</span> <span class="act">Activation Comedy</span></li>
+                                    <li><span class="time">14:55–15:55</span> <span class="act">Raise The Level Art</span></li>
+                                    <li><span class="time">16:00–17:30</span> <span class="act">Film Screening</span></li>
+                                </ul>
+                                <h3 style="margin: 1rem 0 .5rem 0;">Workshops</h3>
+                                <ul class="schedule-list" data-stage="workshops">
+                                    <li><span class="time">07:00–08:00</span> <span class="act">Morning Yoga</span></li>
+                                    <li><span class="time">09:00–09:50</span> <span class="act">Poetry Workshop</span></li>
+                                </ul>
+                            </div>
+                    </div>
+                    </details>
+                </div>
+
+                <style>
+                    .schedule-list { list-style: none; padding: 0; margin: 0; }
+                    .schedule-list li { display: grid; grid-template-columns: 120px 1fr; gap: .75rem; padding: .5rem .75rem; border-bottom: 1px dashed var(--border-color); align-items: baseline; }
+                    .schedule-list li:last-child { border-bottom: 0; }
+                    .schedule-list .time { font-weight: 700; color: var(--primary-color); font-feature-settings: "tnum" on, "lnum" on; }
+                    .schedule-list .act { color: var(--text-color); }
+                    .schedule-list li.is-current { background: var(--surface-2); border-left: 4px solid var(--primary-color); border-bottom-style: solid; }
+                    .schedule-list li.is-upcoming { background: var(--surface-1); }
+                    .day-nav { position: sticky; top: var(--space-md); z-index: 2; display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; background: var(--background); padding: .25rem 0; }
+                    .day-pill { display: inline-block; padding: .5rem .9rem; border: 1px solid var(--border-color); border-radius: 999px; text-decoration: none; font-weight: 600; color: var(--text-color); background: var(--surface-2); }
+                    .day-pill:hover { background: var(--surface-3); border-color: var(--primary-color); color: var(--primary-color); }
+                    .day-pill.active { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
+                    summary { position: relative; }
+                    summary::marker { content: ''; }
+                    summary:before { content: '\25BC'; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%) rotate(0deg); transition: transform .2s ease; color: var(--primary-color); }
+                    details[open] > summary:before { transform: translateY(-50%) rotate(180deg); }
+                    .now-next { border: 1px solid var(--border-color); border-radius: 12px; padding: .75rem; background: var(--surface-1); margin-bottom: 1rem; }
+                    .now-next-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .75rem; align-items: center; }
+                    .nn-block { background: var(--background); border: 1px dashed var(--border-color); border-radius: 10px; padding: .5rem .75rem; }
+                    .nn-label { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted-color); }
+                    .nn-value { font-weight: 700; margin-top: .25rem; }
+                    .program-tools { display:flex; gap:.5rem; align-items:center; margin: .5rem 0 1rem; flex-wrap: wrap; }
+                    #program-search { flex:1; min-width: 220px; padding:.6rem .8rem; border:1px solid var(--border-color); border-radius:8px; }
+                    #program-clear { padding:.55rem .9rem; background: var(--surface-2); }
+                    .program-count { font-size:.9rem; color: var(--muted-color); }
+                    .is-hidden { display:none !important; }
+                    mark.match { background: #fff3b0; padding: 0 .1em; }
+                    .stage-filters { display:flex; gap:.5rem; flex-wrap:wrap; margin: .25rem 0 1rem; }
+                    .stage-pill { padding:.45rem .8rem; border:1px solid var(--border-color); border-radius:999px; background: var(--surface-2); cursor:pointer; }
+                    .stage-pill[aria-pressed="false"] { opacity:.6; }
+                    details summary:focus-visible { outline: 3px solid var(--primary-color); border-radius: 8px; }
+                    /* Print-friendly schedule */
+                    @media print {
+                        header.navbar, .day-nav, .program-tools, .stage-filters, .now-next, .media-section, .newsletter-section, .footer { display:none !important; }
+                        details > summary { display:none; }
+                        details > div { display:block !important; }
+                        details { page-break-after: always; }
+                    }
+                </style>
+                <script>
+                    // Tabs/anchors: open the selected day and mark pills active
+                    (function(){
+                        var container = document.getElementById('program');
+                        if(!container) return;
+                        var detailsEls = container.querySelectorAll('details');
+                        var pills = container.querySelectorAll('.day-pill');
+
+                        function setActive(id){
+                            detailsEls.forEach(function(d){ d.open = d.id === id; });
+                            pills.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+                        }
+
+                        function activateFromHash(){
+                            var id = location.hash && location.hash.substring(1);
+                            if(id && container.querySelector('#' + id)) setActive(id);
+                        }
+
+                        pills.forEach(function(a){
+                            a.addEventListener('click', function(e){
+                                // allow default hash change for shareable URLs, but also toggle immediately
+                                var id = a.getAttribute('href').substring(1);
+                                setActive(id);
+                            });
+                        });
+
+                        window.addEventListener('hashchange', activateFromHash);
+                        activateFromHash();
+                    })();
+                </script>
+                <script>
+                    // Now & Next tracker (Africa/Blantyre UTC+02:00) + ICS + Timezone + Time toggle + Filters + Deep-link per act
+                    (function(){
+                        var program = document.getElementById('program');
+                        if(!program) return;
+                        var TZ_OFFSET = '+02:00';
+                        var dayToDate = {
+                            'thu': '2025-10-30',
+                            'fri': '2025-10-31',
+                            'sat-poetry': '2025-11-01',
+                            'sat-main': '2025-11-01'
+                        };
+                        var timeFormat = (localStorage.getItem('tf_time_format') || '24');
+                        var tzPref = (localStorage.getItem('tf_tz_pref') || 'local');
+
+                        function parseTimeRange(text){
+                            // Formats: "HH:MM–HH:MM" or single "HH:MM"
+                            var parts = text.split('–');
+                            var start = parts[0].trim();
+                            var end = parts[1] ? parts[1].trim() : null;
+                            return { start: start, end: end };
+                        }
+
+                        function toDate(dateStr, hm){
+                            // handle post-midnight rollover (00:00-05:59 belongs to next day)
+                            var h = parseInt(hm.split(':')[0], 10);
+                            var d = dateStr;
+                            if(h < 6){
+                                var dt = new Date(dateStr + 'T12:00:00' + TZ_OFFSET); // noon safe
+                                dt.setDate(dt.getDate() + 1);
+                                d = dt.toISOString().slice(0,10);
+                            }
+                            return new Date(d + 'T' + hm + ':00' + TZ_OFFSET);
+                        }
+
+                        function collectSlots(){
+                            var slots = [];
+                            program.querySelectorAll('details').forEach(function(day){
+                                var dayId = day.id;
+                                var baseDate = dayToDate[dayId];
+                                if(!baseDate) return;
+                                day.querySelectorAll('li').forEach(function(item){
+                                    var timeEl = item.querySelector('.time');
+                                    var actEl = item.querySelector('.act');
+                                    if(!timeEl || !actEl) return;
+                                    var rng = parseTimeRange(timeEl.textContent);
+                                    var start = toDate(baseDate, rng.start);
+                                    var end = rng.end ? toDate(baseDate, rng.end) : new Date(start.getTime() + 15*60*1000);
+                                    var id = dayId + '|' + rng.start + '|' + (rng.end||'') + '|' + actEl.textContent.trim();
+                                    item.dataset.slotId = id;
+                                    slots.push({ dayId: dayId, item: item, start: start, end: end, label: actEl.textContent.trim(), timeText: timeEl.textContent.trim(), id: id, timeEl: timeEl, actEl: actEl });
+                                });
+                            });
+                            // sort by start time
+                            slots.sort(function(a,b){ return a.start - b.start; });
+                            return slots;
+                        }
+
+                        function formatClock(d){
+                            var opts = timeFormat === '12' ? { hour: 'numeric', minute: '2-digit', hour12: true } : { hour: '2-digit', minute: '2-digit', hour12: false };
+                            if (tzPref === 'blantyre') { opts.timeZone = 'Africa/Blantyre'; }
+                            return d.toLocaleTimeString([], opts);
+                        }
+
+                        var nnNow = document.getElementById('nn-now');
+                        var nnNext = document.getElementById('nn-next');
+                        var nnTime = document.getElementById('nn-time');
+                        var slots = collectSlots();
+
+                        function renderTimes(){
+                            slots.forEach(function(s){
+                                var txt = formatClock(s.start) + '–' + formatClock(s.end);
+                                s.timeEl.textContent = txt;
+                            });
+                            var toggleBtn = document.getElementById('time-toggle');
+                            if(toggleBtn){ toggleBtn.textContent = timeFormat === '24' ? 'Switch to 12h' : 'Switch to 24h'; }
+                            var tzBtn = document.getElementById('tz-toggle');
+                            if(tzBtn){ tzBtn.textContent = tzPref === 'local' ? 'Use Africa/Blantyre' : 'Use Local Time'; }
+                        }
+
+                        function tick(){
+                            var now = new Date();
+                            nnTime.textContent = now.toLocaleString();
+                            // clear highlighting
+                            slots.forEach(function(s){ s.item.classList.remove('is-current','is-upcoming'); });
+                            // find current and next
+                            var current = slots.find(function(s){ return now >= s.start && now < s.end; });
+                            var next = slots.find(function(s){ return s.start > now; });
+                            if(current){
+                                nnNow.textContent = current.label + ' (' + formatClock(current.start) + '–' + formatClock(current.end) + ')';
+                                current.item.classList.add('is-current');
+                                // ensure the day is open
+                                var d = document.getElementById(current.dayId); if(d) d.open = true;
+                            } else {
+                                nnNow.textContent = '—';
+                            }
+                            if(next){
+                                nnNext.textContent = next.label + ' (' + formatClock(next.start) + '–' + formatClock(next.end) + ')';
+                                next.item.classList.add('is-upcoming');
+                            } else {
+                                nnNext.textContent = '—';
+                            }
+                            lastCurrent = current; lastNext = next;
+                        }
+
+                        // ICS helpers
+                        function pad(n){ return String(n).padStart(2,'0'); }
+                        function toICSDate(d){
+                            var z = new Date(d.toISOString());
+                            return z.getUTCFullYear() + pad(z.getUTCMonth()+1) + pad(z.getUTCDate()) + 'T' + pad(z.getUTCHours()) + pad(z.getUTCMinutes()) + pad(z.getUTCSeconds()) + 'Z';
+                        }
+                        function downloadICS(slot){
+                            if(!slot) return;
+                            var title = 'Tumaini Festival 2025: ' + slot.label;
+                            var desc = 'Tumaini Festival at Dzaleka Refugee Camp — day: ' + slot.dayId;
+                            var ics = [
+                                'BEGIN:VCALENDAR',
+                                'VERSION:2.0',
+                                'PRODID:-//Dzaleka//Tumaini Festival//EN',
+                                'BEGIN:VEVENT',
+                                'UID:' + slot.id + '@tumaini-festival.dzaleka.com',
+                                'DTSTAMP:' + toICSDate(new Date()),
+                                'DTSTART:' + toICSDate(slot.start),
+                                'DTEND:' + toICSDate(slot.end),
+                                'SUMMARY:' + title,
+                                'DESCRIPTION:' + desc,
+                                'LOCATION:Dzaleka Refugee Camp, Malawi',
+                                'END:VEVENT',
+                                'END:VCALENDAR'
+                            ].join('\r\n');
+                            var blob = new Blob([ics], {type:'text/calendar'});
+                            var a = document.createElement('a');
+                            a.href = URL.createObjectURL(blob);
+                            a.download = (slot.label.replace(/[^a-z0-9]+/gi,'-').toLowerCase() || 'event') + '.ics';
+                            document.body.appendChild(a); a.click(); a.remove();
+                            setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+                        }
+
+                        var lastCurrent = null, lastNext = null;
+                        tick();
+                        setInterval(tick, 30000); // update every 30s
+                        renderTimes();
+                        // Scroll to current slot
+                        var btnNow = document.getElementById('scroll-to-now');
+                        if(btnNow){
+                            btnNow.addEventListener('click', function(){
+                                var currentEl = program.querySelector('.schedule-list li.is-current');
+                                if(currentEl){ currentEl.scrollIntoView({ behavior:'smooth', block:'center' }); }
+                            });
+                        }
+                        // Time toggle
+                        var tbtn = document.getElementById('time-toggle');
+                        if(tbtn){ tbtn.addEventListener('click', function(){ timeFormat = (timeFormat === '24' ? '12' : '24'); localStorage.setItem('tf_time_format', timeFormat); renderTimes(); tick(); }); }
+                        // Timezone toggle
+                        var tzbtn = document.getElementById('tz-toggle');
+                        if(tzbtn){ tzbtn.addEventListener('click', function(){ tzPref = (tzPref === 'local' ? 'blantyre' : 'local'); localStorage.setItem('tf_tz_pref', tzPref); renderTimes(); tick(); }); }
+                        // ICS buttons
+                        var icsCur = document.getElementById('ics-current');
+                        var icsNext = document.getElementById('ics-next');
+                        if(icsCur){ icsCur.addEventListener('click', function(){ downloadICS(lastCurrent || null); }); }
+                        if(icsNext){ icsNext.addEventListener('click', function(){ downloadICS(lastNext || null); }); }
+                        // Live search filtering and highlighting
+                        var search = document.getElementById('program-search');
+                        var clearBtn = document.getElementById('program-clear');
+                        var countEl = document.getElementById('program-count');
+                        function applyFilter(){
+                            var q = (search && search.value || '').trim().toLowerCase();
+                            var total = 0, shown = 0;
+                            program.querySelectorAll('details').forEach(function(d){
+                                var anyInDay = false;
+                                d.querySelectorAll('li').forEach(function(item){
+                                    total++;
+                                    var act = item.querySelector('.act');
+                                    var original = act ? act.textContent : '';
+                                    item.classList.remove('is-hidden');
+                                    if(act){ act.innerHTML = original; }
+                                    if(q){
+                                        var hit = original.toLowerCase().indexOf(q) !== -1;
+                                        if(!hit){ item.classList.add('is-hidden'); }
+                                        else {
+                                            // highlight match
+                                            var idx = original.toLowerCase().indexOf(q);
+                                            if(act && idx >= 0){
+                                                act.innerHTML = original.substring(0,idx) + '<mark class="match">' + original.substring(idx, idx+q.length) + '</mark>' + original.substring(idx+q.length);
+                                            }
+                                            anyInDay = true; shown++;
+                                        }
+                                    } else { anyInDay = true; shown++; }
+                                });
+                                if(q){ d.open = anyInDay; }
+                            });
+                            if(countEl){ countEl.textContent = q ? (shown + ' of ' + total + ' matches') : ''; }
+                        }
+                        if(search){ search.addEventListener('input', applyFilter); }
+                        if(clearBtn){ clearBtn.addEventListener('click', function(){ if(search){ search.value=''; applyFilter(); } }); }
+                        // Stage filters
+                        var stageButtons = program.querySelectorAll('.stage-pill');
+                        function applyStageFilters(){
+                            var active = new Set();
+                            stageButtons.forEach(function(b){ if(b.getAttribute('aria-pressed') === 'true') active.add(b.dataset.stage); });
+                            program.querySelectorAll('ul.schedule-list[data-stage]').forEach(function(ul){ ul.style.display = active.has(ul.getAttribute('data-stage')) ? '' : 'none'; });
+                        }
+                        stageButtons.forEach(function(b){ b.addEventListener('click', function(){ var p = b.getAttribute('aria-pressed') === 'true'; b.setAttribute('aria-pressed', p ? 'false' : 'true'); applyStageFilters(); }); });
+                        applyStageFilters();
+
+                        // Deep links per act removed per request
+                    })();
+                </script>
+            </div>
+        </section>
+        
+        <!-- Homestay Program CTA -->
+        <section id="homestay" class="cta-section" style="background: var(--gradient-dark); color:#fff;">
+            <div class="container">
+                <div class="cta-content">
+                    <span class="section-tag">Homestay Program</span>
+                    <h2 class="section-title" style="color:#fff;">Looking for a place to stay for Tumaini Festival?</h2>
+                    <p class="section-lead" style="color:#fff; opacity:.95; max-width: 800px; margin: 0 auto;">
+                        Look no further! Book your accommodation with a refugee family through our Homestay Program at the Dzaleka Refugee Camp. 🏠<br><br>
+                        This community-based tourism initiative offers a genuine cultural exchange while supporting refugee families’ livelihoods. Staying with a host family means contributing directly to the community and forming lasting connections. 🫱🏼‍🫲🏿
+                    </p>
+                    <div class="hero-buttons" style="margin-top: var(--space-lg);">
+                        <a class="btn btn-primary btn-lg" href="https://tumainiletu.org/the-dzaleka-homestay-program/" target="_blank" rel="noopener">Learn more & Apply</a>
+                        <a class="btn btn-outline btn-lg" href="https://wa.me/265990397855" target="_blank" rel="noopener" aria-label="WhatsApp Vann +265990397855">WhatsApp Vann: +265990397855</a>
                     </div>
                 </div>
             </div>
         </section>
-        
         <!-- Impact Section -->
         <section class="impact-showcase" style="padding: var(--space-3xl) 0;">
             <div class="container">
@@ -558,6 +1167,14 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
         <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
         <script src="assets/js/main.js"></script>
         <script>
+        // Register a very small service worker for offline cache
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function(){
+            navigator.serviceWorker.register('/sw.js').catch(function(){});
+          });
+        }
+        </script>
+        <script>
         // Countdown Timer Script
         (function() {
             const countdownEl = document.getElementById('countdown');
@@ -582,17 +1199,14 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
         })();
         </script>
         <script>
-        // Add with-disclaimer class on load if disclaimer is visible
+        // No offset needed; banner sits inside header above nav
         window.addEventListener('DOMContentLoaded', function() {
-          var banner = document.getElementById('disclaimer-banner');
-          if (banner && banner.style.display !== 'none') {
-            document.body.classList.add('with-disclaimer');
-          }
+          // nothing to do
         });
         function closeDisclaimer() {
           const banner = document.getElementById('disclaimer-banner');
           if (banner) banner.style.display = 'none';
-          document.body.classList.remove('with-disclaimer');
+          // layout collapses naturally
         }
         </script>
         <script>
