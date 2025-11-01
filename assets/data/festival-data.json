@@ -1,0 +1,242 @@
+{
+  "festivals": {
+    "2024": {
+      "theme": "The Power of Community",
+      "date": "October 30 - November 2, 2024",
+      "description": "The 10th anniversary edition of Tumaini Festival brought together artists, refugees, and visitors from around the world to celebrate resilience and creativity.",
+      "highlights": [
+        {
+          "title": "Cultures of Resistance Award",
+          "description": "Received the prestigious Cultures of Resistance Award in 2024"
+        },
+        {
+          "title": "10th Anniversary Milestone",
+          "description": "12,000 attendees celebrated a decade of cultural unity"
+        },
+        {
+          "title": "International Artists",
+          "description": "50+ performing artists from across Africa and beyond"
+        },
+        {
+          "title": "Economic Impact",
+          "description": "Generated income for 500+ local entrepreneurs"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Jetu",
+          "description": "72-year-old singer and great-grandmother, inspiring audiences with her resilience"
+        },
+        {
+          "name": "Maveriq Mavo",
+          "description": "South African musician bringing international sounds"
+        },
+        {
+          "name": "Mfumu Hyphen",
+          "description": "Malawi's top hip-hop artist"
+        },
+        {
+          "name": "Vankson Boy V",
+          "description": "Congolese refugee artist from Dzaleka camp"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tumaini Festival - 2024, 30th October to 2nd November",
+          "publisher": "Malawi Travel",
+          "url": "https://malawitravel.org/our-news/general/entry/tumaini-festival.html",
+          "accessed": "2025-11-01"
+        },
+        {
+          "title": "Joy, resilience shine at Malawi's Tumaini Festival",
+          "publisher": "Daily Sabah",
+          "url": "https://www.dailysabah.com/life/joy-resilience-shine-at-malawis-tumaini-festival/news",
+          "accessed": "2025-11-01"
+        },
+        {
+          "title": "Tumaini festival preps underway, to celebrate ten years of existence",
+          "publisher": "Malawi 24",
+          "url": "https://malawi24.com/2024/06/01/tumaini-festival-preps-underway-to-celebrate-ten-years-of-existence/",
+          "accessed": "2025-11-01"
+        },
+        {
+          "title": "Donate to Tumaini Festival 2025 at Dzaleka Refugee Camp",
+          "publisher": "Omprakash",
+          "url": "https://www.omprakash.org/tumainifestival-2024",
+          "accessed": "2025-11-01"
+        }
+      ]
+    },
+    "2023": {
+      "theme": "Unity in Diversity",
+      "date": "October 27-29, 2023",
+      "description": "The 9th edition focused on celebrating the diverse cultures within Dzaleka and promoting cross-cultural understanding.",
+      "highlights": [
+        {
+          "title": "Cultural Showcases",
+          "description": "Traditional performances from 12 different countries"
+        },
+        {
+          "title": "Youth Engagement",
+          "description": "300+ young people participated in workshops"
+        },
+        {
+          "title": "Media Coverage",
+          "description": "Featured in international media outlets"
+        }
+      ]
+    },
+    "2022": {
+      "theme": "Hope Rising",
+      "date": "November 4-6, 2022",
+      "description": "Post-pandemic revival celebrating resilience and the return to in-person gatherings.",
+      "highlights": [
+        {
+          "title": "Festival Revival",
+          "description": "First full-scale festival after COVID-19 pandemic"
+        },
+        {
+          "title": "Health & Safety",
+          "description": "Implemented comprehensive health protocols"
+        },
+        {
+          "title": "Community Support",
+          "description": "Raised funds for camp healthcare initiatives"
+        }
+      ]
+    },
+    "2021": {
+      "theme": "Connected Through Art",
+      "date": "Virtual Event - October 2021",
+      "description": "A hybrid festival combining virtual and limited in-person events during the pandemic.",
+      "highlights": [
+        {
+          "title": "Virtual Performances",
+          "description": "30+ artists performed via livestream"
+        },
+        {
+          "title": "Global Reach",
+          "description": "Viewers from 50+ countries joined online"
+        },
+        {
+          "title": "Digital Innovation",
+          "description": "Pioneered virtual festival experience"
+        }
+      ]
+    },
+    "2019": {
+      "theme": "Building Bridges",
+      "date": "November 8-10, 2019",
+      "description": "Focused on connecting refugees with local communities through shared artistic experiences.",
+      "highlights": [
+        {
+          "title": "Community Integration",
+          "description": "5,000+ local Malawians attended"
+        },
+        {
+          "title": "Skills Development",
+          "description": "50+ workshops in music, dance, and arts"
+        },
+        {
+          "title": "Economic Empowerment",
+          "description": "200+ vendors participated in market"
+        }
+      ]
+    },
+    "2018": {
+      "theme": "Voices of Hope",
+      "date": "November 2-4, 2018",
+      "description": "Amplifying refugee voices through storytelling, music, and visual arts.",
+      "highlights": [
+        {
+          "title": "Storytelling Platform",
+          "description": "20+ refugee stories shared on main stage"
+        },
+        {
+          "title": "Art Exhibition",
+          "description": "100+ artworks displayed by camp residents"
+        },
+        {
+          "title": "Music Collaboration",
+          "description": "Local and refugee musicians performed together"
+        }
+      ]
+    },
+    "2017": {
+      "theme": "Celebrating Resilience",
+      "date": "November 10-12, 2017",
+      "description": "Honoring the strength and creativity of the Dzaleka community.",
+      "highlights": [
+        {
+          "title": "Dance Performances",
+          "description": "Traditional dances from 8 countries"
+        },
+        {
+          "title": "Food Festival",
+          "description": "International cuisine from camp residents"
+        },
+        {
+          "title": "Children's Activities",
+          "description": "500+ children participated in activities"
+        }
+      ]
+    },
+    "2016": {
+      "theme": "Art Without Borders",
+      "date": "November 4-6, 2016",
+      "description": "Breaking down barriers through creative expression and artistic collaboration.",
+      "highlights": [
+        {
+          "title": "Mural Project",
+          "description": "Community mural created by 30+ artists"
+        },
+        {
+          "title": "Poetry Slam",
+          "description": "First poetry competition at the festival"
+        },
+        {
+          "title": "Fashion Show",
+          "description": "Showcased refugee-designed clothing"
+        }
+      ]
+    },
+    "2015": {
+      "theme": "Dreams Take Flight",
+      "date": "November 6-8, 2015",
+      "description": "The second edition, expanding the festival's reach and impact.",
+      "highlights": [
+        {
+          "title": "Expanded Program",
+          "description": "3-day festival with multiple stages"
+        },
+        {
+          "title": "International Guests",
+          "description": "First international artist performances"
+        },
+        {
+          "title": "Media Attention",
+          "description": "National media coverage began"
+        }
+      ]
+    },
+    "2014": {
+      "theme": "Hope and Harmony",
+      "date": "November 2014",
+      "description": "The inaugural Tumaini Festival, founded by Menes La Plume, bringing arts and culture to Dzaleka Refugee Camp for the first time.",
+      "highlights": [
+        {
+          "title": "Historic Beginning",
+          "description": "First-ever festival in a refugee camp in Malawi"
+        },
+        {
+          "title": "Community Gathering",
+          "description": "1,000+ attendees at the first event"
+        },
+        {
+          "title": "Cultural Exchange",
+          "description": "Brought together refugees and locals through music"
+        }
+      ]
+    }
+  }
+}

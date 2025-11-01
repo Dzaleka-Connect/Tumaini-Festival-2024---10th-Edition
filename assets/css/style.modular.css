@@ -1,0 +1,42 @@
+/**
+ * Tumaini Festival Archive - Modular CSS
+ *
+ * This is the main CSS file that imports all modular components.
+ * Use this as a template for transitioning to a fully modular CSS structure.
+ *
+ * To complete the modularization:
+ * 1. Extract components from style.css into their respective modules
+ * 2. Update this file to import all modules
+ * 3. Replace style.css reference in HTML with this file
+ * 4. Run build process to generate minified version
+ */
+
+/* Base Styles */
+@import 'base/_variables.css';
+@import 'base/_reset.css';
+@import 'base/_typography.css';
+
+/* Components - To be created by extracting from style.css */
+/* @import 'components/_buttons.css'; */
+/* @import 'components/_navbar.css'; */
+/* @import 'components/_cards.css'; */
+/* @import 'components/_forms.css'; */
+/* @import 'components/_hero.css'; */
+/* @import 'components/_footer.css'; */
+/* @import 'components/_program.css'; */
+/* @import 'components/_media.css'; */
+/* @import 'components/_disclaimer.css'; */
+
+/* Layout - To be created */
+/* @import 'layout/_container.css'; */
+/* @import 'layout/_sections.css'; */
+/* @import 'layout/_grid.css'; */
+
+/* Utilities - To be created */
+/* @import 'utilities/_spacing.css'; */
+/* @import 'utilities/_display.css'; */
+/* @import 'utilities/_animations.css'; */
+
+/* Temporary: Import existing monolithic file */
+/* Remove this once modularization is complete */
+@import 'style.css';

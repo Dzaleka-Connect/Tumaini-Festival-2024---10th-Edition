@@ -1,9 +1,17 @@
-const CACHE_NAME = 'tumaini-cache-v1';
+const CACHE_NAME = 'tumaini-cache-v12';
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/assets/css/style.css',
-  '/assets/js/main.js'
+  '/assets/css/subtle-improvements.css',
+  '/assets/js/main.js',
+  '/assets/images/logo.svg',
+  '/assets/images/logo.png',
+  '/assets/images/tumaini_festival_white_logo.svg',
+  '/assets/data/program-schedule.json',
+  '/assets/data/festival-data.json',
+  '/pages/about.html',
+  '/pages/media-coverage.html'
 ];
 
 self.addEventListener('install', (event) => {
@@ -25,10 +33,13 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((cached) => {
       const network = fetch(event.request).then((resp) => {
-        const copy = resp.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        if (resp && resp.ok) {
+          const copy = resp.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        }
         return resp;
-      }).catch(() => cached);
+      });
+      // Return cached version if available, otherwise fetch from network
       return cached || network;
     })
   );

@@ -15,7 +15,6 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
     
     <!-- Canonical Tag -->
     <link rel="canonical" href="https://tumaini-festival.dzaleka.com/">
-    <link rel="canonical" href="https://services.dzaleka.com/events/tumaini-festival-2025/" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -40,7 +39,8 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/subtle-improvements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -201,15 +201,15 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
                     </div>
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <span class="stat-number">50K+</span>
-                            <span class="stat-label">Attendees</span>
+                            <span class="stat-number">230K+</span>
+                            <span class="stat-label">Total Attendees</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">20+</span>
+                            <span class="stat-number">25</span>
                             <span class="stat-label">Countries</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">10</span>
+                            <span class="stat-number">11</span>
                             <span class="stat-label">Years</span>
                         </div>
                     </div>
@@ -232,8 +232,22 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
                     <div class="about-text">
                         <p class="section-lead">Founded in 2014 by Menes La Plume, Tumaini Festival has grown from a small cultural gathering into Malawi's largest multicultural event. It is the world's only festival held within a refugee camp.</p>
                         <p>Through music, dance, poetry, theater, and other art forms, Tumaini Festival promotes peaceful coexistence between refugees and host communities. The festival has become a powerful platform for cultural exchange, having supported over 2,335 entrepreneurs and created 1,500 jobs for refugees while boosting the Dzaleka Refugee Camp economy.</p>
-                        <p>Since its inception, the festival has welcomed 179,000 patrons and reached 61 million people through media coverage, amplifying refugee voices and raising awareness of refugee rights globally.</p>
+                        <p>Since its inception, the festival has welcomed over 230,000 patrons, featured 615 performing acts from 25 countries, and reached 61 million people through media coverage, amplifying refugee voices and raising awareness of refugee rights globally.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Festival Timeline Section -->
+        <section id="festival-timeline" class="timeline-section" style="padding: var(--space-3xl) 0; background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);">
+            <div class="container">
+                <div class="timeline-header text-center fade-up">
+                    <span class="section-tag">Festival History</span>
+                    <h2 class="section-title">Explore the Festival's History</h2>
+                    <p class="section-lead">Discover a decade of arts, culture, and community impact at Dzaleka Refugee Camp</p>
+                </div>
+                <div class="timeline-content">
+                    <!-- Timeline cards will be dynamically loaded here -->
                 </div>
             </div>
         </section>
@@ -1087,9 +1101,9 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
         <section id="get-involved" class="get-involved-section" style="padding: var(--space-3xl) 0;">
             <div class="container">
                 <div class="get-involved-header text-center">
-                    <span class="section-tag">Archive</span>
-                    <h2 class="section-title">Explore the Festival's History</h2>
-                    <p class="section-lead">Discover a decade of arts, culture, and community impact at Dzaleka Refugee Camp</p>
+                    <span class="section-tag">Get Involved</span>
+                    <h2 class="section-title">Join the Archive Community</h2>
+                    <p class="section-lead">Help preserve and share the legacy of Tumaini Festival</p>
                 </div>
                 <div class="support-options">
                     <div class="support-card">
@@ -1163,8 +1177,8 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
         </footer>
 
         <!-- Scripts -->
-        <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
-        <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+        <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
         <script src="assets/js/main.js"></script>
         <script>
         // Register a very small service worker for offline cache
@@ -1178,22 +1192,47 @@ DISCLAIMER: This is an unofficial archive website for Tumaini Festival. We are n
         // Countdown Timer Script
         (function() {
             const countdownEl = document.getElementById('countdown');
+            const countdownLabel = document.getElementById('countdown-label');
             if (!countdownEl) return;
-            // Festival start date: 30 October 2025, 00:00:00 Africa/Blantyre (UTC+2)
-            const festivalDate = new Date('2025-10-30T00:00:00+02:00');
+
+            // Festival dates: 30 October - 1 November 2025, Africa/Blantyre (UTC+2)
+            const festivalStart = new Date('2025-10-30T00:00:00+02:00');
+            const festivalEnd = new Date('2025-11-01T23:59:59+02:00');
+
             function updateCountdown() {
                 const now = new Date();
-                const diff = festivalDate - now;
-                if (diff <= 0) {
-                    countdownEl.textContent = 'The festival has begun!';
+                const diffToStart = festivalStart - now;
+                const diffToEnd = festivalEnd - now;
+
+                // After festival ends
+                if (diffToEnd <= 0) {
+                    if (countdownLabel) {
+                        countdownLabel.textContent = 'Festival Archive:';
+                    }
+                    countdownEl.innerHTML = '🎉 Thanks for celebrating with us!<br><small style="font-size: 0.7em; opacity: 0.8;">See you at Tumaini Festival 2026!</small>';
                     return;
                 }
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                const minutes = Math.floor((diff / (1000 * 60)) % 60);
-                const seconds = Math.floor((diff / 1000) % 60);
+
+                // During festival (started but not ended)
+                if (diffToStart <= 0 && diffToEnd > 0) {
+                    if (countdownLabel) {
+                        countdownLabel.textContent = 'Happening Now:';
+                    }
+                    countdownEl.innerHTML = '🎊 The festival is live!<br><small style="font-size: 0.7em; opacity: 0.8;">Check the program schedule below</small>';
+                    return;
+                }
+
+                // Before festival starts
+                if (countdownLabel) {
+                    countdownLabel.textContent = 'Countdown to Festival:';
+                }
+                const days = Math.floor(diffToStart / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diffToStart / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diffToStart / (1000 * 60)) % 60);
+                const seconds = Math.floor((diffToStart / 1000) % 60);
                 countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
+
             updateCountdown();
             setInterval(updateCountdown, 1000);
         })();

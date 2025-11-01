@@ -1,0 +1,290 @@
+{
+  "festival": {
+    "name": "Tumaini Festival 2025",
+    "theme": "Rising With Resilience",
+    "startDate": "2025-10-30",
+    "endDate": "2025-11-01",
+    "location": "Dzaleka Refugee Camp, Dowa, Malawi",
+    "timezone": "Africa/Blantyre",
+    "timezoneOffset": "+02:00"
+  },
+  "stages": [
+    {
+      "id": "elikiva",
+      "name": "Elikiva Stage",
+      "description": "Main performance stage"
+    },
+    {
+      "id": "khizera",
+      "name": "Khizera Stage",
+      "description": "Secondary performance stage"
+    },
+    {
+      "id": "cultural",
+      "name": "Cultural Ground",
+      "description": "Traditional cultural performances"
+    },
+    {
+      "id": "theater",
+      "name": "Theater",
+      "description": "Theater and comedy performances"
+    },
+    {
+      "id": "workshops",
+      "name": "Workshops",
+      "description": "Interactive workshops and activities"
+    },
+    {
+      "id": "poetry",
+      "name": "Poetry",
+      "description": "Poetry and spoken word performances"
+    }
+  ],
+  "program": {
+    "thursday": {
+      "date": "2025-10-30",
+      "name": "Thursday · October 30, 2025",
+      "stages": {
+        "elikiva": [
+          { "time": "15:00–15:15", "act": "Pop Kevo" },
+          { "time": "15:15–15:30", "act": "Ngoma Ras" },
+          { "time": "15:30–15:45", "act": "Samji Baby" },
+          { "time": "15:45–16:00", "act": "Click Dance Crew" },
+          { "time": "16:00–16:15", "act": "Kenedy Jazz" },
+          { "time": "16:15–16:30", "act": "Jades" },
+          { "time": "16:30–16:45", "act": "Savior Brothers" },
+          { "time": "16:45–17:00", "act": "Sepa Artist" },
+          { "time": "17:00–17:15", "act": "Delvas Lyon" },
+          { "time": "17:15–17:30", "act": "Young Simba" },
+          { "time": "17:30–17:45", "act": "Wilfred London" },
+          { "time": "17:45–18:00", "act": "B-Max" },
+          { "time": "18:00–19:30", "act": "Film Screening: \"We Name Ourselves\"" },
+          { "time": "19:30–19:45", "act": "Forus" },
+          { "time": "19:45–20:00", "act": "Power Dance" },
+          { "time": "20:00–20:15", "act": "Chosen Diekings" },
+          { "time": "20:15–20:30", "act": "Starngona Croull" },
+          { "time": "20:30–20:45", "act": "Americano" },
+          { "time": "20:45–21:00", "act": "Gloria Mubirki" },
+          { "time": "21:00–21:15", "act": "Mr. Tembo" },
+          { "time": "21:15–21:30", "act": "Cris Wapa Easy" },
+          { "time": "21:30–21:45", "act": "Free To Dream" },
+          { "time": "21:45–22:00", "act": "Roshboy" },
+          { "time": "22:00–22:15", "act": "Kenzo B" },
+          { "time": "22:15–22:30", "act": "Boys Band" }
+        ]
+      }
+    },
+    "friday": {
+      "date": "2025-10-31",
+      "name": "Friday · October 31, 2025",
+      "stages": {
+        "elikiva": [
+          { "time": "09:00–10:00", "act": "DJ La Perle" },
+          { "time": "10:00–10:30", "act": "Zouma Boy" },
+          { "time": "10:30–11:00", "act": "Full Swagger Miss Dance" },
+          { "time": "11:00–11:30", "act": "Maestros" },
+          { "time": "11:30–13:00", "act": "Film Screening" },
+          { "time": "13:00–13:30", "act": "The Dream Dance Crew" },
+          { "time": "13:30–14:00", "act": "Kimbunga" },
+          { "time": "14:00–14:20", "act": "Issabel King" },
+          { "time": "14:20–14:50", "act": "Astonics Chozemba" },
+          { "time": "14:50–15:20", "act": "Milefa Sisters" },
+          { "time": "15:20–15:30", "act": "Sound of Trumpet" },
+          { "time": "15:30–15:50", "act": "Thima" },
+          { "time": "15:50–16:05", "act": "Opening" },
+          { "time": "16:05–18:05", "act": "Cultural Grounds (Crossover)" },
+          { "time": "18:05–18:25", "act": "The Big Six Band" },
+          { "time": "18:25–18:55", "act": "Man Vee" },
+          { "time": "18:55–19:25", "act": "Mvafubi Band" },
+          { "time": "19:25–19:45", "act": "Choba" },
+          { "time": "19:45–20:15", "act": "Topik" },
+          { "time": "20:15–20:45", "act": "Jay Jay Cee" },
+          { "time": "20:45–21:05", "act": "Joe Kellz" },
+          { "time": "21:05–21:25", "act": "Raven Duchess" },
+          { "time": "21:25–22:35", "act": "Chizmo Sting" },
+          { "time": "22:35–23:05", "act": "Sean Morgan" },
+          { "time": "23:05–00:05", "act": "Saint Realest" },
+          { "time": "00:05–01:05", "act": "DJ Hugo" }
+        ],
+        "khizera": [
+          { "time": "09:30–10:30", "act": "DJ Kalma" },
+          { "time": "10:30–11:00", "act": "John B Emma" },
+          { "time": "11:00–11:30", "act": "Ndayiziveye Eliude" },
+          { "time": "11:30–12:00", "act": "Shekinah" },
+          { "time": "12:00–12:30", "act": "Safisha Dance Crew" },
+          { "time": "12:30–13:00", "act": "Brother Beni" },
+          { "time": "13:00–13:40", "act": "Idel J BK Boy" },
+          { "time": "13:40–14:00", "act": "Wayabi Comedy Group" },
+          { "time": "14:00–14:20", "act": "Britt Cee" },
+          { "time": "14:20–14:40", "act": "Tarzan CB" },
+          { "time": "14:40–15:00", "act": "Sentram" },
+          { "time": "15:00–15:20", "act": "Slik Stenner" },
+          { "time": "15:20–15:40", "act": "Young Saidi" },
+          { "time": "15:40–16:00", "act": "Kenton Mbale" },
+          { "time": "16:00–16:20", "act": "Zachi" },
+          { "time": "16:20–16:50", "act": "Faz B The Rapper" },
+          { "time": "16:50–17:10", "act": "Twatasha Kachali" },
+          { "time": "17:10–17:40", "act": "Hosanna Music" },
+          { "time": "17:40–18:00", "act": "Njuchi Wapa Easy" },
+          { "time": "18:00–18:20", "act": "Black Squad" },
+          { "time": "18:20–18:40", "act": "Ranny D" },
+          { "time": "18:40–19:00", "act": "Jay Blue" },
+          { "time": "19:00–19:20", "act": "Simmy Stings" },
+          { "time": "19:20–19:50", "act": "DJ Harshfao" },
+          { "time": "19:50–20:20", "act": "Jeg Tellem" },
+          { "time": "20:20–20:50", "act": "Eagle Extra Dancers" },
+          { "time": "20:50–21:30", "act": "Ben Band" }
+        ],
+        "cultural": [
+          { "time": "16:05–16:35", "act": "ASAFA" },
+          { "time": "16:35–17:05", "act": "Mganda" },
+          { "time": "17:05–17:35", "act": "Indenganabaganzi" },
+          { "time": "17:35–18:05", "act": "Dust In The Air" }
+        ],
+        "theater": [
+          { "time": "10:00–10:30", "act": "Gambona Zene" },
+          { "time": "10:40–11:10", "act": "White Vision" },
+          { "time": "11:20–11:50", "act": "Dark To Light" },
+          { "time": "12:00–12:25", "act": "The Chanco Travelling Theater" },
+          { "time": "12:35–13:00", "act": "Local Iriswaga" },
+          { "time": "13:00–13:30", "act": "Fusion Theatre Group" },
+          { "time": "13:40–14:10", "act": "Shandoflex" },
+          { "time": "14:10–14:40", "act": "Mobutu Comedy" },
+          { "time": "14:50–15:20", "act": "Hephzibah Arts" },
+          { "time": "16:00–17:30", "act": "Film Screening" }
+        ],
+        "workshops": [
+          { "time": "07:00–08:00", "act": "Morning Yoga" },
+          { "time": "09:00–12:00", "act": "Music Workshop" },
+          { "time": "09:00–12:00", "act": "Fashion Designer Workshop" }
+        ]
+      }
+    },
+    "saturday_poetry": {
+      "date": "2025-11-01",
+      "name": "Saturday · November 1, 2025 — Poetry Program",
+      "stages": {
+        "poetry": [
+          { "time": "09:00–09:15", "act": "Introduction" },
+          { "time": "09:15–09:50", "act": "Workshops" },
+          { "time": "09:50–09:55", "act": "Amina The Poetess" },
+          { "time": "09:55–10:00", "act": "Jamaah" },
+          { "time": "10:00–10:10", "act": "Trinity" },
+          { "time": "10:10–10:20", "act": "Marvelous" },
+          { "time": "10:20–10:25", "act": "Andrenie" },
+          { "time": "10:25–10:35", "act": "Cassie" },
+          { "time": "10:35–10:40", "act": "King Jopa" },
+          { "time": "10:40–10:50", "act": "The Branches Art" },
+          { "time": "10:50–11:00", "act": "Mercy Mbeta" },
+          { "time": "11:00–11:10", "act": "Madalitso Blessed" },
+          { "time": "11:10–11:20", "act": "Charles Matenga" },
+          { "time": "11:20–11:25", "act": "Rhomia" },
+          { "time": "11:25–11:30", "act": "Skywalkers" },
+          { "time": "11:30–11:35", "act": "Madalitso Rodi" },
+          { "time": "11:35–11:40", "act": "Eagle Pro" },
+          { "time": "11:40–11:50", "act": "Joseph Kabvala" },
+          { "time": "11:50–12:10", "act": "The Voice" },
+          { "time": "12:10–12:20", "act": "Blessings Marshapiyo" },
+          { "time": "12:20–12:40", "act": "Rudy Ruhigita" },
+          { "time": "12:40–12:50", "act": "Paul Philip" },
+          { "time": "12:50–13:10", "act": "Nelson MBT" },
+          { "time": "13:10–13:20", "act": "Tao Jeka" },
+          { "time": "13:20–13:30", "act": "Milcah Faith" },
+          { "time": "13:30–13:40", "act": "Ayap" },
+          { "time": "13:40–14:30", "act": "Firstborn Poet" },
+          { "time": "14:30–14:50", "act": "Wanga" },
+          { "time": "14:50–15:20", "act": "Thuthukani" },
+          { "time": "15:20–15:30", "act": "Jonathan Bin" },
+          { "time": "15:30–16:00", "act": "Mental Health Awareness" },
+          { "time": "16:00", "act": "Closing" }
+        ]
+      }
+    },
+    "saturday_main": {
+      "date": "2025-11-01",
+      "name": "Saturday · November 1, 2025 — Main Program",
+      "stages": {
+        "elikiva": [
+          { "time": "09:00–10:00", "act": "DJ BA" },
+          { "time": "10:00–10:30", "act": "Sefra Wiser" },
+          { "time": "10:30–11:00", "act": "Seben Jazz Music" },
+          { "time": "11:00–11:30", "act": "Lighters Dance" },
+          { "time": "11:30–13:00", "act": "Film Screening" },
+          { "time": "13:00–13:25", "act": "Teen Wolf" },
+          { "time": "13:25–13:50", "act": "MGO Dance" },
+          { "time": "13:50–14:15", "act": "Adobe Dance Crew" },
+          { "time": "14:15–14:35", "act": "Theophilus" },
+          { "time": "14:35–15:05", "act": "Cultural Grounds (Crossover)" },
+          { "time": "15:05–16:05", "act": "Mitengeli" },
+          { "time": "16:05–16:25", "act": "Madalitso Banda" },
+          { "time": "16:25–17:15", "act": "Omega Bebesa" },
+          { "time": "17:15–17:45", "act": "Vankson" },
+          { "time": "17:45–18:15", "act": "Djemira Classic" },
+          { "time": "18:15–18:50", "act": "Loiso" },
+          { "time": "18:50–19:35", "act": "Amidu Elian" },
+          { "time": "19:35–19:55", "act": "Mr. Mraize" },
+          { "time": "19:55–20:15", "act": "Giresse Inno" },
+          { "time": "20:15–20:55", "act": "Wailing Brothers" },
+          { "time": "20:55–21:30", "act": "Apama Arts" },
+          { "time": "21:30–21:50", "act": "Salama Africa" },
+          { "time": "21:50–22:10", "act": "Abo Blaze" },
+          { "time": "22:10–22:30", "act": "Forus Dance Crew" },
+          { "time": "22:30–23:10", "act": "Sife" },
+          { "time": "23:10–23:50", "act": "Manyasa Band" },
+          { "time": "23:50–00:20", "act": "Lady Aika" },
+          { "time": "00:20–00:50", "act": "Driemo" },
+          { "time": "01:20–02:00", "act": "DJ La Perle" }
+        ],
+        "khizera": [
+          { "time": "09:30–10:30", "act": "DJ Leonard" },
+          { "time": "10:30–11:00", "act": "King David" },
+          { "time": "11:00–11:30", "act": "Bonex" },
+          { "time": "11:30–12:00", "act": "Son De La Restauration" },
+          { "time": "12:00–12:30", "act": "Dzaleka Kids" },
+          { "time": "12:30–13:00", "act": "DJ Esther" },
+          { "time": "13:00–13:20", "act": "Mufles Dance Crew" },
+          { "time": "13:20–13:40", "act": "Sowers Dance Crew" },
+          { "time": "13:40–14:00", "act": "Ben Tunez" },
+          { "time": "14:00–14:20", "act": "T‑Wolf" },
+          { "time": "14:20–14:40", "act": "Young Sunna" },
+          { "time": "14:40–15:20", "act": "Zabuni" },
+          { "time": "15:20–15:40", "act": "Black Snack Dance Crew" },
+          { "time": "15:40–16:00", "act": "Rosi Kapend" },
+          { "time": "16:00–16:20", "act": "Legends Dance Crew" },
+          { "time": "16:20–16:40", "act": "Cour d'Adoration" },
+          { "time": "16:40–17:00", "act": "Maestro Tite" },
+          { "time": "17:00–17:20", "act": "Mizati Band" },
+          { "time": "17:20–17:40", "act": "Mr. Tembo" },
+          { "time": "17:40–18:00", "act": "Damacia" },
+          { "time": "18:00–18:20", "act": "Jahlop & The Heavy Weight Rockers" },
+          { "time": "18:20–18:40", "act": "Silflame" },
+          { "time": "18:40–19:00", "act": "Natenalist Rasta" },
+          { "time": "19:00–19:20", "act": "Bos Mes K.A" },
+          { "time": "19:20–19:40", "act": "Gift Gospel" },
+          { "time": "19:40–20:00", "act": "Redbull Dance Crew" },
+          { "time": "20:00–20:30", "act": "Free To Dream" },
+          { "time": "20:30–21:00", "act": "Cyborg 001" }
+        ],
+        "cultural": [
+          { "time": "14:35–15:05", "act": "Gule Wamkulu" },
+          { "time": "15:05–15:35", "act": "Amahoro" },
+          { "time": "15:35–16:05", "act": "Fashion Show" }
+        ],
+        "theater": [
+          { "time": "10:00–10:45", "act": "Mzuzu University Theater" },
+          { "time": "10:55–11:15", "act": "Better Generations Theater" },
+          { "time": "11:25–12:25", "act": "YDC Theatre" },
+          { "time": "12:35–13:00", "act": "Linga Creative" },
+          { "time": "13:40–14:10", "act": "Chinsapo Arts Theater" },
+          { "time": "14:20–14:45", "act": "Activation Comedy" },
+          { "time": "14:55–15:55", "act": "Raise The Level Art" },
+          { "time": "16:00–17:30", "act": "Film Screening" }
+        ],
+        "workshops": [
+          { "time": "07:00–08:00", "act": "Morning Yoga" },
+          { "time": "09:00–09:50", "act": "Poetry Workshop" }
+        ]
+      }
+    }
+  }
+}

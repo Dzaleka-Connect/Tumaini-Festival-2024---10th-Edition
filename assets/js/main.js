@@ -38,6 +38,42 @@ const initializeTimeline = async () => {
 const createTimelineCard = (year, festival) => {
     const card = document.createElement('div');
     card.className = 'timeline-card fade-up';
+
+    const notablePerformersHTML = festival.notable_performers ? `
+        <div class="timeline-performers">
+            <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--color-primary, #FF4D00); font-size: 1rem;">Notable Performers</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+                ${festival.notable_performers.map(performer => `
+                    <div style="padding: 0.75rem; background: rgba(255, 77, 0, 0.05); border-radius: 8px; border-left: 3px solid var(--color-primary, #FF4D00);">
+                        <strong style="color: var(--color-primary, #FF4D00);">${performer.name}</strong>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.875rem; color: #666;">${performer.description}</p>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    ` : '';
+
+    const sourcesHTML = festival.sources ? `
+        <div class="timeline-sources" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
+            <h4 style="margin-bottom: 0.75rem; color: #666; font-size: 0.875rem; font-weight: 600;">
+                <i class="fas fa-link" style="margin-right: 0.5rem;"></i>Sources
+            </h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.875rem;">
+                ${festival.sources.map(source => `
+                    <li style="margin-bottom: 0.5rem;">
+                        <a href="${source.url}" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary, #FF4D00); text-decoration: none; display: flex; align-items: start; gap: 0.5rem;">
+                            <i class="fas fa-external-link-alt" style="margin-top: 0.25rem; font-size: 0.75rem; opacity: 0.7;"></i>
+                            <span>
+                                <strong>${source.publisher}</strong> - ${source.title}
+                                <span style="color: #999; font-size: 0.8rem; display: block;">Accessed: ${source.accessed}</span>
+                            </span>
+                        </a>
+                    </li>
+                `).join('')}
+            </ul>
+        </div>
+    ` : '';
+
     card.innerHTML = `
         <div class="timeline-year">${year}</div>
         <h3>${festival.theme}</h3>
@@ -51,6 +87,8 @@ const createTimelineCard = (year, festival) => {
                 </div>
             `).join('')}
         </div>
+        ${notablePerformersHTML}
+        ${sourcesHTML}
     `;
     return card;
 };
@@ -160,52 +198,8 @@ const initializeMobileMenu = () => {
     }
 };
 
-// Newsletter Form
-class NewsletterForm {
-    constructor(form) {
-        this.form = form;
-        this.bindEvents();
-    }
-
-    bindEvents() {
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-    }
-
-    async handleSubmit(e) {
-        e.preventDefault();
-        const email = this.form.querySelector('input[type="email"]').value;
-        
-        try {
-            this.form.classList.add('loading');
-            // Add your newsletter API endpoint here
-            const response = await fetch('/api/newsletter', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email }),
-            });
-            
-            if (response.ok) {
-                this.showSuccess();
-            } else {
-                throw new Error('Newsletter subscription failed');
-            }
-        } catch (error) {
-            this.showError(error);
-        } finally {
-            this.form.classList.remove('loading');
-        }
-    }
-
-    showSuccess() {
-        // Add success message implementation
-    }
-
-    showError(error) {
-        // Add error message implementation
-    }
-}
+// Newsletter Form - Handled inline in index.html with Formspree
+// No additional JavaScript needed as the form submission is managed by Formspree
 
 // Initialize all components
 document.addEventListener('DOMContentLoaded', () => {
@@ -215,21 +209,16 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeMobileMenu();
         initializeSmoothScroll();
 
+        // Initialize timeline with festival data
+        initializeTimeline();
+
         // Initialize animations if needed
         if (typeof initializeAnimations === 'function') {
             initializeAnimations();
         }
-        
-        // Initialize forms if they exist
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if (newsletterForm) {
-            new NewsletterForm(newsletterForm);
-        }
 
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            new ContactForm(contactForm);
-        }
+        // Newsletter form is handled inline with Formspree in index.html
+        // Contact form handled separately if needed
     } catch (error) {
         console.error('Error initializing components:', error);
     }
