@@ -1,5 +1,45 @@
 {
   "festivals": {
+    "2025": {
+      "theme": "Rising With Resilience",
+      "date": "October 30 - November 1, 2025",
+      "description": "The 11th edition of Tumaini Festival continues the tradition of celebrating arts, culture, and community at Dzaleka Refugee Camp. Full details and statistics to be published following the event.",
+      "highlights": [
+        {
+          "title": "11th Anniversary",
+          "description": "Marking over a decade of cultural celebration and refugee empowerment"
+        },
+        {
+          "title": "Confirmed Performers",
+          "description": "Amahoro Drummers and other regional and international artists"
+        },
+        {
+          "title": "Three-Day Celebration",
+          "description": "Free admission festival bringing together refugees and local communities"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Amahoro Drummers",
+          "description": "Cultural group founded in 2006 by Burundian refugees, preserving the Royal Drum tradition"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tumaini Festival - 2025",
+          "publisher": "Malawi Travel",
+          "url": "https://malawitravel.org/what-is-happening/events/event/378-tumaini-festival-2024.html",
+          "accessed": "2025-11-02"
+        },
+        {
+          "title": "Introducing Amahoro Drummers",
+          "publisher": "The Nation",
+          "url": "https://mwnation.com/introducing-amahoro-drummers/",
+          "accessed": "2025-11-02"
+        }
+      ],
+      "note": "This entry contains preliminary information as the festival just concluded. Full attendance figures and comprehensive highlights will be added when official reports are published."
+    },
     "2024": {
       "theme": "The Power of Community",
       "date": "October 30 - November 2, 2024",
@@ -124,14 +164,59 @@
         }
       ]
     },
+    "2020": {
+      "theme": "Not Held",
+      "date": "Cancelled due to COVID-19 Pandemic",
+      "description": "The festival was not held in 2020 due to the global COVID-19 pandemic and resulting health restrictions in Malawi. The decision was made to protect the health and safety of refugees, staff, artists, and attendees. Despite the cancellation, 2020 marked significant international recognition for Tumaini Letu's work.",
+      "highlights": [
+        {
+          "title": "Festival Suspended",
+          "description": "First year without Tumaini Festival since its founding in 2014"
+        },
+        {
+          "title": "Sharjah International Award",
+          "description": "Tumaini Letu received the 2020 Sharjah International Award for Refugee Advocacy & Support"
+        },
+        {
+          "title": "Cumulative Impact Recognition",
+          "description": "By 2020, festival had welcomed 99,000+ attendees and 304 performing acts across 7 years"
+        },
+        {
+          "title": "Community Resilience",
+          "description": "Despite the cancellation, Dzaleka community continued to support each other through the pandemic"
+        },
+        {
+          "title": "Planning for Return",
+          "description": "Organizers began planning for a virtual/hybrid model for 2021"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tumaini Letu Impact Report 2020",
+          "publisher": "Tumaini Letu",
+          "url": "https://tumainiletu.org/wp-content/uploads/2022/01/Tumaini-Letu-Impact-Report-2020-2.pdf",
+          "accessed": "2025-11-02"
+        },
+        {
+          "title": "Sharjah honours Tumaini Letu",
+          "publisher": "PR Newswire",
+          "url": "https://www.prnewswire.com/ae/news-releases/sharjah-honours-the-culturally-driven-refugee-empowerment-initiatives-of-malawis-tumaini-letu-301115171.html",
+          "accessed": "2025-11-02"
+        }
+      ]
+    },
     "2019": {
       "theme": "Building Bridges",
       "date": "November 8-10, 2019",
-      "description": "Focused on connecting refugees with local communities through shared artistic experiences.",
+      "description": "The 6th edition focused on connecting refugees with local communities through shared artistic experiences. This landmark year saw record attendance as the festival's reputation grew regionally and internationally.",
       "highlights": [
         {
+          "title": "Record Attendance",
+          "description": "Estimated 35,000 attendees from across Malawi, Africa, and beyond"
+        },
+        {
           "title": "Community Integration",
-          "description": "5,000+ local Malawians attended"
+          "description": "5,000+ local Malawians attended, strengthening refugee-host community bonds"
         },
         {
           "title": "Skills Development",
@@ -139,7 +224,19 @@
         },
         {
           "title": "Economic Empowerment",
-          "description": "200+ vendors participated in market"
+          "description": "200+ vendors participated in market, generating income for refugees"
+        },
+        {
+          "title": "Economic Impact",
+          "description": "Festival contributed to annual $150,000+ revenue for Dzaleka economy"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tumaini Letu 2019 Impact Report",
+          "publisher": "Tumaini Letu",
+          "url": "https://tumainiletu.org/wp-content/uploads/2021/10/Tumaini-Letu-2019-Impact-Report.pdf",
+          "accessed": "2025-11-02"
         }
       ]
     },

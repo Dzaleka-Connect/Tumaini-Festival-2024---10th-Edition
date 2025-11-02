@@ -74,6 +74,13 @@ const createTimelineCard = (year, festival) => {
         </div>
     ` : '';
 
+    const noteHTML = festival.note ? `
+        <div class="timeline-note" style="margin-top: 1.5rem; padding: 1rem; background: #fffbea; border-left: 4px solid #ffa500; font-size: 0.875rem; color: #856404; border-radius: 4px;">
+            <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>
+            <strong>Note:</strong> ${festival.note}
+        </div>
+    ` : '';
+
     card.innerHTML = `
         <div class="timeline-year">${year}</div>
         <h3>${festival.theme}</h3>
@@ -89,6 +96,7 @@ const createTimelineCard = (year, festival) => {
         </div>
         ${notablePerformersHTML}
         ${sourcesHTML}
+        ${noteHTML}
     `;
     return card;
 };
