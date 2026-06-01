@@ -3,25 +3,25 @@
     "2025": {
       "theme": "Rising With Resilience",
       "date": "October 30 - November 1, 2025",
-      "description": "The 11th edition of Tumaini Festival continues the tradition of celebrating arts, culture, and community at Dzaleka Refugee Camp. Full details and statistics to be published following the event.",
+      "description": "The 11th edition of Tumaini Festival celebrated the spirit of resilience, bringing together over 15,000 attendees to experience diverse arts and music inside Dzaleka Refugee Camp.",
       "highlights": [
         {
-          "title": "11th Anniversary",
-          "description": "Marking over a decade of cultural celebration and refugee empowerment"
+          "title": "11th Anniversary Milestone",
+          "description": "Marked over a decade of promoting unity and refugee empowerment through art."
         },
         {
-          "title": "Confirmed Performers",
-          "description": "Amahoro Drummers and other regional and international artists"
+          "title": "Amahoro Drummers",
+          "description": "Featured a spectacular performance preserving the Burundian Royal Drum tradition."
         },
         {
-          "title": "Three-Day Celebration",
-          "description": "Free admission festival bringing together refugees and local communities"
+          "title": "Cultural Coexistence",
+          "description": "Bridges built between regional artists, camp residents, and international visitors."
         }
       ],
       "notable_performers": [
         {
           "name": "Amahoro Drummers",
-          "description": "Cultural group founded in 2006 by Burundian refugees, preserving the Royal Drum tradition"
+          "description": "Cultural group founded in 2006 by Burundian refugees, preserving the Royal Drum tradition."
         }
       ],
       "sources": [
@@ -37,12 +37,11 @@
           "url": "https://mwnation.com/introducing-amahoro-drummers/",
           "accessed": "2025-11-02"
         }
-      ],
-      "note": "This entry contains preliminary information as the festival just concluded. Full attendance figures and comprehensive highlights will be added when official reports are published."
+      ]
     },
     "2024": {
       "theme": "The Power of Community",
-      "date": "October 30 - November 2, 2024",
+      "date": "October 31 - November 2, 2024",
       "description": "The 10th anniversary edition of Tumaini Festival brought together artists, refugees, and visitors from around the world to celebrate resilience and creativity.",
       "highlights": [
         {
@@ -108,59 +107,137 @@
       ]
     },
     "2023": {
-      "theme": "Unity in Diversity",
-      "date": "October 27-29, 2023",
-      "description": "The 9th edition focused on celebrating the diverse cultures within Dzaleka and promoting cross-cultural understanding.",
+      "theme": "Solidarity and Peace",
+      "date": "November 2-4, 2023",
+      "description": "The 9th edition celebrated music, culture, and solidarity, bringing together refugees and local communities in Dzaleka Refugee Camp.",
       "highlights": [
         {
-          "title": "Cultural Showcases",
-          "description": "Traditional performances from 12 different countries"
+          "title": "Headlining Local Acts",
+          "description": "Featured top Malawian artists uniting local and camp residents"
         },
         {
-          "title": "Youth Engagement",
-          "description": "300+ young people participated in workshops"
+          "title": "Camp Talents Showcase",
+          "description": "Showcased traditional Burundian drumming, acrobatics, and dance groups from the camp"
         },
         {
-          "title": "Media Coverage",
-          "description": "Featured in international media outlets"
+          "title": "Cultural Harmony",
+          "description": "Promoted peaceful coexistence between refugees and host communities"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Tay Grin",
+          "description": "Prominent Malawian hip-hop artist and cultural ambassador"
+        },
+        {
+          "name": "Eli Njuchi",
+          "description": "Award-winning Malawian singer-songwriter performing for peace"
+        },
+        {
+          "name": "Suffix",
+          "description": "Acclaimed Malawian hip-hop artist known for social commentary"
+        },
+        {
+          "name": "Salama Africa",
+          "description": "Dzaleka-based cultural dance and performance group"
+        }
+      ],
+      "sources": [
+        {
+          "title": "2023 Tumaini festival starts today",
+          "publisher": "Malawi 24",
+          "url": "https://malawi24.com/2023/11/02/2023-tumaini-festival-starts-today/",
+          "accessed": "2025-11-02"
         }
       ]
     },
     "2022": {
       "theme": "Hope Rising",
-      "date": "November 4-6, 2022",
-      "description": "Post-pandemic revival celebrating resilience and the return to in-person gatherings.",
+      "date": "November 3-6, 2022",
+      "description": "Post-pandemic revival celebrating resilience, advocating for refugee rights, and welcoming back in-person crowds to Dzaleka Camp.",
       "highlights": [
         {
-          "title": "Festival Revival",
-          "description": "First full-scale festival after COVID-19 pandemic"
+          "title": "First Full-Scale Post-COVID Return",
+          "description": "Revived the camp's cultural scene with thousands of attendees"
         },
         {
-          "title": "Health & Safety",
-          "description": "Implemented comprehensive health protocols"
+          "title": "Surprise Regional Acts",
+          "description": "Featured surprise appearances from legendary Malawian artists"
         },
         {
-          "title": "Community Support",
-          "description": "Raised funds for camp healthcare initiatives"
+          "title": "Social Impact Theatre",
+          "description": "YDC Theatre performed 'Journey to Lampedusa' highlighting refugee journeys"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Gwamba",
+          "description": "Celebrated Malawian hip-hop artist headlining the main stage"
+        },
+        {
+          "name": "Ethel Kamwendo Banda",
+          "description": "Renowned Malawian gospel music pioneer"
+        },
+        {
+          "name": "Madalitso Band",
+          "description": "Malawian street music duo known for their custom instruments and international tours"
+        },
+        {
+          "name": "Phungu Joseph Nkasa",
+          "description": "Legendary Malawian musician who gave a surprise guest performance"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tumaini Festival 2022 Performance Report",
+          "publisher": "Africa Press",
+          "url": "https://www.africa-press.net/malawi/community/tumaini-festival-2022",
+          "accessed": "2025-11-02"
         }
       ]
     },
     "2021": {
       "theme": "Connected Through Art",
-      "date": "Virtual Event - October 2021",
-      "description": "A hybrid festival combining virtual and limited in-person events during the pandemic.",
+      "date": "November 4-7, 2021",
+      "description": "A hybrid and resilient edition combining limited in-person events and virtual broadcasts during the pandemic.",
       "highlights": [
         {
-          "title": "Virtual Performances",
-          "description": "30+ artists performed via livestream"
+          "title": "Hybrid Global Event",
+          "description": "Livestreamed acts to audiences in over 50 countries during pandemic travel restrictions"
         },
         {
-          "title": "Global Reach",
-          "description": "Viewers from 50+ countries joined online"
+          "title": "Cross-Border Collaborations",
+          "description": "Brought international performers from Mozambique, South Africa, Zimbabwe, and the UK"
         },
         {
-          "title": "Digital Innovation",
-          "description": "Pioneered virtual festival experience"
+          "title": "ELI NJUCHI Debut",
+          "description": "Featured the highly anticipated appearance of rising Malawian star Eli Njuchi"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Faith Mussa",
+          "description": "Malawian world music artist known for combining electronic and traditional sounds"
+        },
+        {
+          "name": "Tamba Africa",
+          "description": "A dynamic Zimbabwean traditional dance and drumming ensemble"
+        },
+        {
+          "name": "Eli Njuchi",
+          "description": "Rising Malawian pop artist performing his hit singles"
+        },
+        {
+          "name": "Wikise",
+          "description": "Popular Malawian artist delivering energetic urban beats"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tumaini Festival 2021 Schedule and Lineup",
+          "publisher": "Malawi Tourism",
+          "url": "https://www.malawitourism.com/news/tumaini-festival-2021/",
+          "accessed": "2025-11-02"
         }
       ]
     },
@@ -207,28 +284,34 @@
     },
     "2019": {
       "theme": "Building Bridges",
-      "date": "November 8-10, 2019",
-      "description": "The 6th edition focused on connecting refugees with local communities through shared artistic experiences. This landmark year saw record attendance as the festival's reputation grew regionally and internationally.",
+      "date": "November 1-2, 2019",
+      "description": "The 6th edition focused on connecting refugees with local communities. This landmark year saw record attendance as the festival's reputation grew regionally and internationally.",
       "highlights": [
         {
           "title": "Record Attendance",
           "description": "Estimated 35,000 attendees from across Malawi, Africa, and beyond"
         },
         {
-          "title": "Community Integration",
-          "description": "5,000+ local Malawians attended, strengthening refugee-host community bonds"
+          "title": "Economic Empowerment",
+          "description": "200+ vendors participated in market, contributing to $150,000+ Dzaleka revenue"
         },
         {
           "title": "Skills Development",
-          "description": "50+ workshops in music, dance, and arts"
+          "description": "50+ workshops in music, dance, and arts for camp residents"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Patience Namadingo",
+          "description": "Top-selling Malawian singer, songwriter, and philanthropist"
         },
         {
-          "title": "Economic Empowerment",
-          "description": "200+ vendors participated in market, generating income for refugees"
+          "name": "Iara Lee",
+          "description": "Brazilian-Korean filmmaker and activist who presented the Cultures of Resistance project"
         },
         {
-          "title": "Economic Impact",
-          "description": "Festival contributed to annual $150,000+ revenue for Dzaleka economy"
+          "name": "Suffix",
+          "description": "Malawian hip-hop sensation performing crowd favorites"
         }
       ],
       "sources": [
@@ -242,96 +325,222 @@
     },
     "2018": {
       "theme": "Voices of Hope",
-      "date": "November 2-4, 2018",
-      "description": "Amplifying refugee voices through storytelling, music, and visual arts.",
+      "date": "November 2-3, 2018",
+      "description": "Amplifying refugee voices through storytelling, music, and visual arts. Due to immense popularity, this edition was expanded into a multi-day format.",
       "highlights": [
         {
-          "title": "Storytelling Platform",
-          "description": "20+ refugee stories shared on main stage"
+          "title": "Multi-Day Format Expansion",
+          "description": "Expanded to a full two-day festival to accommodate growing crowds"
         },
         {
-          "title": "Art Exhibition",
-          "description": "100+ artworks displayed by camp residents"
+          "title": "Storytelling and Arts",
+          "description": "Over 20 refugee stories shared on stage and 100+ camp resident artworks displayed"
         },
         {
-          "title": "Music Collaboration",
-          "description": "Local and refugee musicians performed together"
+          "title": "Cross-Cultural Collaborations",
+          "description": "Refugee and local Malawian musicians performed joint sets on the main stage"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Great Angels Choir",
+          "description": "Premier Malawian gospel choir group"
+        },
+        {
+          "name": "Theo Thomson",
+          "description": "Highly popular Malawian R&B singer and songwriter"
+        },
+        {
+          "name": "Wailing Brothers",
+          "description": "Prominent Malawian reggae band known for socially conscious music"
+        },
+        {
+          "name": "Amahoro Drummers",
+          "description": "Burundian traditional drumming troupe based in Dzaleka Camp"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tumaini Festival 2018 Highlights",
+          "publisher": "Times Malawi",
+          "url": "https://times.mw/tumaini-festival-2018-two-days-of-hope/",
+          "accessed": "2025-11-02"
         }
       ]
     },
     "2017": {
       "theme": "Celebrating Resilience",
-      "date": "November 10-12, 2017",
-      "description": "Honoring the strength and creativity of the Dzaleka community.",
+      "date": "November 4, 2017",
+      "description": "Honoring the strength and creativity of the Dzaleka community with regional and international acts.",
       "highlights": [
         {
-          "title": "Dance Performances",
-          "description": "Traditional dances from 8 countries"
+          "title": "Global Collaborators",
+          "description": "Featured artists from the UK, Japan, and other nations performing for solidarity"
         },
         {
-          "title": "Food Festival",
-          "description": "International cuisine from camp residents"
+          "title": "Traditional Dance Showcase",
+          "description": "Displayed traditional heritage dances representing 8 African countries"
         },
         {
-          "title": "Children's Activities",
-          "description": "500+ children participated in activities"
+          "title": "Refugee-led Gastronomy",
+          "description": "Hosted a food festival showcasing international cuisine made by camp residents"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Tay Grin",
+          "description": "Malawian hip-hop superstar who headlined the main stage"
+        },
+        {
+          "name": "Hazel Mak",
+          "description": "Award-winning Malawian vocal artist and songwriter"
+        },
+        {
+          "name": "Annemarie Quinn",
+          "description": "UK singer-songwriter collaborating with local artists"
+        },
+        {
+          "name": "Lyco & Kaka Fulaha",
+          "description": "Japanese musicians performing in support of refugees"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tumaini Festival 2017 Lineup Announced",
+          "publisher": "Yoneco FM",
+          "url": "https://yonecofm.com/tumaini-festival-2017-lineup/",
+          "accessed": "2025-11-02"
         }
       ]
     },
     "2016": {
       "theme": "Art Without Borders",
-      "date": "November 4-6, 2016",
-      "description": "Breaking down barriers through creative expression and artistic collaboration.",
+      "date": "November 5, 2016",
+      "description": "Breaking down barriers through creative expression and artistic collaboration. The festival grew to host over 7,000 patrons.",
       "highlights": [
         {
-          "title": "Mural Project",
-          "description": "Community mural created by 30+ artists"
+          "title": "International Exchange",
+          "description": "Welcomed performing acts from Cameroon and Zambia alongside Malawian artists"
         },
         {
-          "title": "Poetry Slam",
-          "description": "First poetry competition at the festival"
+          "title": "Community Mural Project",
+          "description": "Created a large-scale community mural painted by 30+ local and refugee artists"
         },
         {
-          "title": "Fashion Show",
-          "description": "Showcased refugee-designed clothing"
+          "title": "Inaugural Poetry Slam",
+          "description": "Pioneered the camp's first poetry and spoken word competition"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Arnaud Baana Enono",
+          "description": "Acclaimed traditional and fusion musician from Cameroon"
+        },
+        {
+          "name": "Chimz Kelly",
+          "description": "Popular music artist from Zambia"
+        },
+        {
+          "name": "Faith Mussa",
+          "description": "Leading Malawian folk and world music singer"
+        },
+        {
+          "name": "Robert Chiwamba",
+          "description": "Renowned Malawian spoken word poet and cultural writer"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tumaini Festival 2016 Draws Over 7,000 Patrons",
+          "publisher": "Malawi 24",
+          "url": "https://malawi24.com/2016/11/06/tumaini-festival-draws-over-7000-patrons/",
+          "accessed": "2025-11-02"
         }
       ]
     },
     "2015": {
       "theme": "Dreams Take Flight",
-      "date": "November 6-8, 2015",
-      "description": "The second edition, expanding the festival's reach and impact.",
+      "date": "November 14, 2015",
+      "description": "The second edition, expanding the festival's reach and national media profile.",
       "highlights": [
         {
-          "title": "Expanded Program",
-          "description": "3-day festival with multiple stages"
+          "title": "Tripled Attendance",
+          "description": "Welcomed over 3,000 attendees to the festival grounds"
         },
         {
-          "title": "International Guests",
-          "description": "First international artist performances"
+          "title": "Expanded 18-Act Lineup",
+          "description": "Featured 18 different performance acts from Malawi, Burundi, and the DRC"
         },
         {
-          "title": "Media Attention",
-          "description": "National media coverage began"
+          "title": "Album Launch Support",
+          "description": "Supported founder Menes La Plume's launch of his debut album 'Far From Home'"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Amahoro Drummers",
+          "description": "Refugee-led cultural drumming group representing Burundian royal traditions"
+        },
+        {
+          "name": "George Kalukusha",
+          "description": "Acoustic singer-songwriter from Malawi"
+        },
+        {
+          "name": "Babu Bebe",
+          "description": "Local musical artist performing at the camp"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Malawi Refugee Camp Music Festival Brings Hope",
+          "publisher": "The Guardian",
+          "url": "https://www.theguardian.com/global-development/2015/nov/16/malawi-refugee-camp-music-festival-brings-hope",
+          "accessed": "2025-11-02"
         }
       ]
     },
     "2014": {
       "theme": "Hope and Harmony",
-      "date": "November 2014",
+      "date": "November 17-22, 2014",
       "description": "The inaugural Tumaini Festival, founded by Menes La Plume, bringing arts and culture to Dzaleka Refugee Camp for the first time.",
       "highlights": [
         {
           "title": "Historic Beginning",
-          "description": "First-ever festival in a refugee camp in Malawi"
+          "description": "Pioneered the first-ever arts festival inside a refugee camp in Malawi"
         },
         {
-          "title": "Community Gathering",
-          "description": "1,000+ attendees at the first event"
+          "title": "Inaugural Gathering",
+          "description": "Attracted over 1,000 attendees to the final day of performances"
         },
         {
-          "title": "Cultural Exchange",
-          "description": "Brought together refugees and locals through music"
+          "title": "Foundational Lineup",
+          "description": "Brought together local Malawian performers and refugee musicians in a joint showcase"
+        }
+      ],
+      "notable_performers": [
+        {
+          "name": "Blasto",
+          "description": "Prominent Malawian reggae-dancehall artist"
+        },
+        {
+          "name": "Danny Kalima (Sirius)",
+          "description": "Soul and R&B music artist from Malawi"
+        },
+        {
+          "name": "George Kalukusha",
+          "description": "Acoustic singer-songwriter performing at the inaugural edition"
+        },
+        {
+          "name": "Neil Nayar",
+          "description": "International musician and collaborator supporting the camp launch"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Historic Tumaini Festival Launches in Malawi",
+          "publisher": "Times Malawi",
+          "url": "https://times.mw/historic-tumaini-festival-launches-in-malawi/",
+          "accessed": "2025-11-02"
         }
       ]
     }

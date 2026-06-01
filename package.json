@@ -1,0 +1,17 @@
+{
+  "name": "tumaini-festival-archive",
+  "version": "1.0.0",
+  "description": "An interactive archive celebrating the Tumaini Festival",
+  "scripts": {
+    "dev": "npx http-server -p 8080",
+    "start": "npx http-server -p 8080"
+  },
+  "keywords": [
+    "tumaini",
+    "festival",
+    "archive",
+    "dzaleka"
+  ],
+  "author": "Dzaleka Connect",
+  "license": "MIT"
+}

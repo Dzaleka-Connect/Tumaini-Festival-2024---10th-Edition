@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <!-- Dynamic currentColor repeating pattern for a warm, hand-crafted feel -->
+  <!-- Outer diamond frame -->
+  <path d="M40 0 L80 40 L40 80 L0 40 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.12"/>
+  <path d="M40 10 L70 40 L40 70 L10 40 Z" fill="none" stroke="currentColor" stroke-width="1" opacity="0.08"/>
+  
+  <!-- Chevrons / Triangles -->
+  <path d="M0 0 L15 15 M80 0 L65 15 M0 80 L15 65 M80 80 L65 65" stroke="currentColor" stroke-width="1.5" opacity="0.15"/>
+  <path d="M40 30 L50 40 L40 50 L30 40 Z" fill="currentColor" opacity="0.08"/>
+  
+  <!-- Accent Dots -->
+  <circle cx="40" cy="40" r="3" fill="currentColor" opacity="0.18"/>
+  <circle cx="0" cy="0" r="2" fill="currentColor" opacity="0.18"/>
+  <circle cx="80" cy="0" r="2" fill="currentColor" opacity="0.18"/>
+  <circle cx="0" cy="80" r="2" fill="currentColor" opacity="0.18"/>
+  <circle cx="80" cy="80" r="2" fill="currentColor" opacity="0.18"/>
+  
+  <!-- Corner Triangles -->
+  <path d="M0 20 L20 0 M80 20 L60 0 M0 60 L20 80 M80 60 L60 80" stroke="currentColor" stroke-width="1" opacity="0.1"/>
+</svg>

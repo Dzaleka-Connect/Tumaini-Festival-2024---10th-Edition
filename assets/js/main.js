@@ -1,7 +1,18 @@
+const getAssetUrl = (assetPath) => {
+    const mainScript = document.querySelector('script[src*="assets/js/main.js"]');
+
+    if (mainScript && mainScript.src) {
+        return new URL(`../${assetPath}`, mainScript.src).href;
+    }
+
+    return `/assets/${assetPath}`;
+};
+
 // Initialize dynamic content loading
 const loadFestivalData = async () => {
     try {
-        const response = await fetch('/assets/data/festival-data.json');
+        const response = await fetch(getAssetUrl('data/festival-data.json'));
+        if (!response.ok) throw new Error(`Festival data request failed: ${response.status}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -21,17 +32,34 @@ const initializeTimeline = async () => {
             const data = await loadFestivalData();
             
             if (data && data.festivals) {
-                Object.entries(data.festivals).reverse().forEach(([year, festival]) => {
+                Object.entries(data.festivals)
+                    .filter(([, festival]) => festival.timeline_visible !== false)
+                    .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
+                    .forEach(([year, festival]) => {
                     const timelineCard = createTimelineCard(year, festival);
                     timelineContent.appendChild(timelineCard);
                 });
+            } else {
+                showTimelineFallback(timelineContent);
             }
         } catch (error) {
             console.error('Error initializing timeline:', error);
+            showTimelineFallback(timelineContent);
         } finally {
             hideLoading(timelineContent);
         }
     }
+};
+
+const showTimelineFallback = (timelineContent) => {
+    if (!timelineContent) return;
+
+    timelineContent.innerHTML = `
+        <div class="timeline-empty">
+            <h3>Timeline temporarily unavailable</h3>
+            <p>The festival history data could not be loaded in this view. The archive pages and program record are still available from the navigation.</p>
+        </div>
+    `;
 };
 
 // Create timeline cards
@@ -41,12 +69,12 @@ const createTimelineCard = (year, festival) => {
 
     const notablePerformersHTML = festival.notable_performers ? `
         <div class="timeline-performers">
-            <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--color-primary, #FF4D00); font-size: 1rem;">Notable Performers</h4>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+            <h4>Notable Performers</h4>
+            <div class="performer-grid">
                 ${festival.notable_performers.map(performer => `
-                    <div style="padding: 0.75rem; background: rgba(255, 77, 0, 0.05); border-radius: 8px; border-left: 3px solid var(--color-primary, #FF4D00);">
-                        <strong style="color: var(--color-primary, #FF4D00);">${performer.name}</strong>
-                        <p style="margin: 0.25rem 0 0 0; font-size: 0.875rem; color: #666;">${performer.description}</p>
+                    <div class="performer-card">
+                        <strong>${performer.name}</strong>
+                        <p>${performer.description}</p>
                     </div>
                 `).join('')}
             </div>
@@ -54,18 +82,17 @@ const createTimelineCard = (year, festival) => {
     ` : '';
 
     const sourcesHTML = festival.sources ? `
-        <div class="timeline-sources" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
-            <h4 style="margin-bottom: 0.75rem; color: #666; font-size: 0.875rem; font-weight: 600;">
-                <i class="fas fa-link" style="margin-right: 0.5rem;"></i>Sources
+        <div class="timeline-sources">
+            <h4>
+                <i class="fas fa-link" aria-hidden="true"></i> Sources
             </h4>
-            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.875rem;">
+            <ul class="timeline-source-list">
                 ${festival.sources.map(source => `
-                    <li style="margin-bottom: 0.5rem;">
-                        <a href="${source.url}" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary, #FF4D00); text-decoration: none; display: flex; align-items: start; gap: 0.5rem;">
-                            <i class="fas fa-external-link-alt" style="margin-top: 0.25rem; font-size: 0.75rem; opacity: 0.7;"></i>
+                    <li>
+                        <a href="${source.url}" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                             <span>
                                 <strong>${source.publisher}</strong> - ${source.title}
-                                <span style="color: #999; font-size: 0.8rem; display: block;">Accessed: ${source.accessed}</span>
                             </span>
                         </a>
                     </li>
@@ -75,8 +102,8 @@ const createTimelineCard = (year, festival) => {
     ` : '';
 
     const noteHTML = festival.note ? `
-        <div class="timeline-note" style="margin-top: 1.5rem; padding: 1rem; background: #fffbea; border-left: 4px solid #ffa500; font-size: 0.875rem; color: #856404; border-radius: 4px;">
-            <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>
+        <div class="timeline-note">
+            <i class="fas fa-info-circle" aria-hidden="true"></i>
             <strong>Note:</strong> ${festival.note}
         </div>
     ` : '';
@@ -165,6 +192,17 @@ const initializeMobileMenu = () => {
             navLinks.classList.toggle('active', isMenuOpen);
             mobileMenuToggle.setAttribute('aria-expanded', isMenuOpen);
             
+            const toggleIcon = mobileMenuToggle.querySelector('i');
+            if (toggleIcon) {
+                if (isMenuOpen) {
+                    toggleIcon.classList.remove('fa-bars');
+                    toggleIcon.classList.add('fa-times');
+                } else {
+                    toggleIcon.classList.remove('fa-times');
+                    toggleIcon.classList.add('fa-bars');
+                }
+            }
+            
             // Focus trap when menu is open
             if (isMenuOpen) {
                 // Get all focusable elements in nav
@@ -210,7 +248,7 @@ const initializeMobileMenu = () => {
 // No additional JavaScript needed as the form submission is managed by Formspree
 
 // Initialize all components
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     try {
         // Core functionality
         handleNavbarScroll();
@@ -218,15 +256,22 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeSmoothScroll();
 
         // Initialize timeline with festival data
-        initializeTimeline();
+        await initializeTimeline();
+
+        // Initialize dynamic program archive page if present in DOM
+        if (document.getElementById('program-schedule-container')) {
+            await initializeProgramPage();
+        }
+
+        // Initialize Gallery Lightbox if gallery items exist in DOM
+        if (document.querySelector('.gallery-item')) {
+            new GalleryLightbox();
+        }
 
         // Initialize animations if needed
         if (typeof initializeAnimations === 'function') {
             initializeAnimations();
         }
-
-        // Newsletter form is handled inline with Formspree in index.html
-        // Contact form handled separately if needed
     } catch (error) {
         console.error('Error initializing components:', error);
     }
@@ -299,33 +344,7 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.style.scrollBehavior = 'auto';
 }
 
-// Disclaimer Banner
-const initializeDisclaimer = () => {
-    const disclaimer = document.getElementById('disclaimer');
-    const disclaimerClose = document.querySelector('.disclaimer-close');
-    const navbar = document.querySelector('.navbar');
-    const main = document.querySelector('main');
-    
-    if (!disclaimer || !disclaimerClose || !navbar || !main) return;
-    
-    // Check if disclaimer was previously closed
-    const isDisclaimerClosed = localStorage.getItem('disclaimerClosed');
-    
-    if (isDisclaimerClosed) {
-        disclaimer.classList.add('closed');
-        navbar.classList.add('disclaimer-closed');
-        main.classList.add('disclaimer-closed');
-    }
-    
-    disclaimerClose.addEventListener('click', () => {
-        disclaimer.classList.add('closed');
-        navbar.classList.add('disclaimer-closed');
-        main.classList.add('disclaimer-closed');
-        
-        // Store the state in localStorage
-        localStorage.setItem('disclaimerClosed', 'true');
-    });
-};
+
 
 // Pagination
 const initializePagination = () => {
@@ -428,4 +447,313 @@ const hideLoading = (container) => {
     if (spinner) {
         spinner.style.display = 'none';
     }
+};
+
+// ============================================
+// DYNAMIC PROGRAM ARCHIVE RENDERER
+// ============================================
+const initializeProgramPage = async () => {
+    const container = document.getElementById('program-schedule-container');
+    const searchInput = document.getElementById('program-search');
+    const clearBtn = document.getElementById('program-clear');
+    const countEl = document.getElementById('program-count');
+    const timeToggleBtn = document.getElementById('time-toggle');
+    const tzToggleBtn = document.getElementById('tz-toggle');
+    const tzIndicator = document.getElementById('local-time-indicator');
+    const stagePills = document.querySelectorAll('.stage-pill');
+    const programNav = document.querySelector('.program-nav');
+
+    if (!container) return;
+
+    // State Variables
+    let programData = null;
+    let activeDay = ''; // e.g. 'thursday', 'friday'
+    let searchQuery = '';
+    let activeStages = new Set(['elikiva', 'khizera', 'cultural', 'theater', 'workshops', 'poetry']);
+    let timeFormat = localStorage.getItem('tf_time_format') || '24';
+    let tzPref = localStorage.getItem('tf_tz_pref') || 'local';
+
+    // Set Initial Text for Toggles
+    if (timeToggleBtn) timeToggleBtn.textContent = timeFormat === '24' ? 'Switch to 12h' : 'Switch to 24h';
+    if (tzToggleBtn) tzToggleBtn.textContent = tzPref === 'local' ? 'Use Africa/Blantyre' : 'Use Local Time';
+    if (tzIndicator) tzIndicator.textContent = tzPref === 'local' ? `(showing browser local time)` : `(showing Camp time, CAT/UTC+2)`;
+
+    // Fetch Program Schedule JSON
+    try {
+        const response = await fetch(getAssetUrl('data/program-schedule.json'));
+        if (!response.ok) throw new Error('Failed to load schedule data');
+        const json = await response.json();
+        programData = json.program;
+
+        // Extract and render day tabs
+        if (programNav && programData) {
+            programNav.innerHTML = '';
+            Object.entries(programData).forEach(([dayKey, dayVal], idx) => {
+                const btn = document.createElement('button');
+                btn.className = `program-nav-btn ${idx === 0 ? 'active' : ''}`;
+                btn.textContent = dayVal.name.split('·')[0].trim(); // Get Thursday/Friday/Saturday
+                btn.dataset.day = dayKey;
+                
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.program-nav-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    activeDay = dayKey;
+                    renderSchedule();
+                });
+                programNav.appendChild(btn);
+
+                if (idx === 0) activeDay = dayKey;
+            });
+        }
+
+        renderSchedule();
+    } catch (error) {
+        console.error('Error rendering program page:', error);
+        container.innerHTML = `<div style="text-align: center; padding: 2rem; color: #ff0000; font-weight: 600;"><i class="fas fa-exclamation-triangle"></i> Error loading program schedule. Please try again later.</div>`;
+    }
+
+    // Helper: Parse HH:MM range to local/target Date objects
+    const parseTimeRange = (dateStr, timeStr) => {
+        const parts = timeStr.split('–');
+        const startPart = parts[0].trim();
+        const endPart = parts[1] ? parts[1].trim() : null;
+
+        // Camp Time is CAT (UTC+02:00)
+        const toDate = (hm) => {
+            const h = parseInt(hm.split(':')[0], 10);
+            let d = dateStr;
+            // Rollover support for late night acts after midnight
+            if (h < 6) {
+                const dt = new Date(dateStr + 'T12:00:00+02:00');
+                dt.setDate(dt.getDate() + 1);
+                d = dt.toISOString().slice(0, 10);
+            }
+            return new Date(`${d}T${hm}:00+02:00`);
+        };
+
+        const startDate = toDate(startPart);
+        const endDate = endPart ? toDate(endPart) : new Date(startDate.getTime() + 30 * 60 * 1000);
+        return { start: startDate, end: endDate };
+    };
+
+    // Helper: Format Date object to string based on format & timezone preference
+    const formatClock = (d) => {
+        const opts = timeFormat === '12' 
+            ? { hour: 'numeric', minute: '2-digit', hour12: true } 
+            : { hour: '2-digit', minute: '2-digit', hour12: false };
+        
+        if (tzPref === 'blantyre') {
+            opts.timeZone = 'Africa/Blantyre';
+        }
+        return d.toLocaleTimeString([], opts);
+    };
+
+    // Render Function
+    const renderSchedule = () => {
+        if (!programData || !activeDay) return;
+        
+        container.innerHTML = '';
+        const dayData = programData[activeDay];
+        const dateStr = dayData.date;
+        let matchCount = 0;
+        let totalCount = 0;
+
+        // Render layout grid
+        const grid = document.createElement('div');
+        grid.className = 'program-grid';
+
+        // Iterate stages
+        Object.entries(dayData.stages).forEach(([stageId, acts]) => {
+            totalCount += acts.length;
+
+            // Check if stage is active
+            if (!activeStages.has(stageId)) return;
+
+            // Filter acts by search query
+            const filteredActs = acts.filter(act => {
+                if (!searchQuery) return true;
+                return act.act.toLowerCase().includes(searchQuery);
+            });
+
+            if (filteredActs.length === 0) return;
+            matchCount += filteredActs.length;
+
+            // Stage Card
+            const stageCard = document.createElement('div');
+            stageCard.className = 'stage-section';
+            stageCard.innerHTML = `<h3 class="stage-title">${stageId.charAt(0).toUpperCase() + stageId.slice(1)} Stage</h3>`;
+
+            const list = document.createElement('div');
+            list.className = 'performance-list';
+
+            filteredActs.forEach(act => {
+                const times = parseTimeRange(dateStr, act.time);
+                const displayTime = `${formatClock(times.start)} – ${formatClock(times.end)}`;
+                
+                // Highlight matches in artist name
+                let artistHTML = act.act;
+                if (searchQuery) {
+                    const idx = act.act.toLowerCase().indexOf(searchQuery);
+                    if (idx >= 0) {
+                        artistHTML = act.act.substring(0, idx) + 
+                                     `<mark class="match">${act.act.substring(idx, idx + searchQuery.length)}</mark>` + 
+                                     act.act.substring(idx + searchQuery.length);
+                    }
+                }
+
+                const item = document.createElement('div');
+                item.className = 'performance-item';
+
+                item.innerHTML = `
+                    <div style="flex: 1;">
+                        <span class="time">${displayTime}</span>
+                        <div class="performance-details" style="margin-top: 0.25rem;">
+                            <span class="artist" style="font-size: 1.1rem; font-weight: 600;">${artistHTML}</span>
+                        </div>
+                    </div>
+                `;
+
+                // Add to calendar button
+                const calBtn = document.createElement('button');
+                calBtn.className = 'ics-download-btn';
+                calBtn.title = 'Add to Calendar';
+                calBtn.innerHTML = '<i class="far fa-calendar-plus"></i>';
+                calBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    downloadCalendarEvent(act.act, times.start, times.end, stageId);
+                });
+                item.appendChild(calBtn);
+
+                list.appendChild(item);
+            });
+
+            stageCard.appendChild(list);
+            grid.appendChild(stageCard);
+        });
+
+        container.appendChild(grid);
+
+        // Update matches count label
+        if (countEl) {
+            if (searchQuery) {
+                countEl.textContent = `${matchCount} of ${totalCount} acts matched`;
+            } else {
+                countEl.textContent = '';
+            }
+        }
+
+        // Show empty state if no matches
+        if (matchCount === 0 && searchQuery) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 4rem 0; color: var(--muted-color);">
+                    <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1.5rem; opacity: 0.5;"></i>
+                    <p style="font-size: 1.1rem; font-weight: 500;">No performers match "${searchQuery}" on this day.</p>
+                </div>
+            `;
+        }
+    };
+
+    // Live Search Listeners
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            searchQuery = searchInput.value.trim().toLowerCase();
+            renderSchedule();
+        });
+    }
+
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            if (searchInput) {
+                searchInput.value = '';
+                searchQuery = '';
+                renderSchedule();
+            }
+        });
+    }
+
+    // Toggle Preferences Listeners
+    if (timeToggleBtn) {
+        timeToggleBtn.addEventListener('click', () => {
+            timeFormat = timeFormat === '24' ? '12' : '24';
+            localStorage.setItem('tf_time_format', timeFormat);
+            timeToggleBtn.textContent = timeFormat === '24' ? 'Switch to 12h' : 'Switch to 24h';
+            renderSchedule();
+        });
+    }
+
+    if (tzToggleBtn) {
+        tzToggleBtn.addEventListener('click', () => {
+            tzPref = tzPref === 'local' ? 'blantyre' : 'local';
+            localStorage.setItem('tf_tz_pref', tzPref);
+            tzToggleBtn.textContent = tzPref === 'local' ? 'Use Africa/Blantyre' : 'Use Local Time';
+            if (tzIndicator) tzIndicator.textContent = tzPref === 'local' ? `(showing browser local time)` : `(showing Camp time, CAT/UTC+2)`;
+            renderSchedule();
+        });
+    }
+
+    // Stage Pills Selection Listeners
+    stagePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            const stage = pill.dataset.stage;
+            const isPressed = pill.getAttribute('aria-pressed') === 'true';
+            
+            if (isPressed) {
+                pill.setAttribute('aria-pressed', 'false');
+                pill.classList.remove('active');
+                activeStages.delete(stage);
+            } else {
+                pill.setAttribute('aria-pressed', 'true');
+                pill.classList.add('active');
+                activeStages.add(stage);
+            }
+            renderSchedule();
+        });
+    });
+};
+
+// ============================================
+// CALENDAR DOWNLOAD GENERATOR (ICS)
+// ============================================
+const downloadCalendarEvent = (actName, startDate, endDate, stageId) => {
+    const pad = (num) => String(num).padStart(2, '0');
+    
+    // Format to ICS format YYYYMMDDTHHMMSSZ (UTC time format)
+    const toICSDate = (d) => {
+        const utcDate = new Date(d.toISOString());
+        return utcDate.getUTCFullYear() + 
+               pad(utcDate.getUTCMonth() + 1) + 
+               pad(utcDate.getUTCDate()) + 'T' + 
+               pad(utcDate.getUTCHours()) + 
+               pad(utcDate.getUTCMinutes()) + 
+               pad(utcDate.getUTCSeconds()) + 'Z';
+    };
+
+    const title = `Tumaini Archive: ${actName}`;
+    const desc = `Celebrating the Tumaini Festival Legacy at Dzaleka Refugee Camp.\nStage: ${stageId.charAt(0).toUpperCase() + stageId.slice(1)}`;
+    const location = `Dzaleka Refugee Camp, Dowa, Malawi`;
+    
+    const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Dzaleka//Tumaini Festival Archive//EN',
+        'BEGIN:VEVENT',
+        `UID:${actName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-${startDate.getTime()}@tumaini-festival.dzaleka.com`,
+        `DTSTAMP:${toICSDate(new Date())}`,
+        `DTSTART:${toICSDate(startDate)}`,
+        `DTEND:${toICSDate(endDate)}`,
+        `SUMMARY:${title}`,
+        `DESCRIPTION:${desc}`,
+        `LOCATION:${location}`,
+        'END:VEVENT',
+        'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${actName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-schedule.ics`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => { URL.revokeObjectURL(a.href); }, 2000);
 };
