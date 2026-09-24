@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tumaini-cache-v15';
+const CACHE_NAME = 'tumaini-cache-v16';
 const CORE_ASSETS = [
   '/',
   '/index.html',
@@ -11,8 +11,11 @@ const CORE_ASSETS = [
   '/assets/data/program-schedule.json',
   '/assets/data/festival-data.json',
   '/pages/about.html',
+  '/pages/gallery.html',
+  '/pages/impact.html',
   '/pages/media-coverage.html',
-  '/pages/program.html'
+  '/pages/program.html',
+  '/pages/visitor-info.html'
 ];
 
 self.addEventListener('install', (event) => {
