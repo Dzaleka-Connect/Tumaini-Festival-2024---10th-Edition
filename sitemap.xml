@@ -59,38 +59,4 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- Festival Timeline Section -->
-    <url>
-        <loc>https://tumaini-festival.dzaleka.com/#festival-timeline</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-
-    <!-- About Section -->
-    <url>
-        <loc>https://tumaini-festival.dzaleka.com/#about</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Homestay Section -->
-    <url>
-        <loc>https://tumaini-festival.dzaleka.com/#homestay</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- Get Involved Section -->
-    <url>
-        <loc>https://tumaini-festival.dzaleka.com/#get-involved</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
 </urlset>
